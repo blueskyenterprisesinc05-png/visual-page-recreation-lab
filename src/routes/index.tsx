@@ -435,7 +435,7 @@ function FinalCta() {
           Explore liquidity, understand market structure, and connect with a community focused on disciplined learning.
         </p>
         <JoinCta className="mt-10" />
-      </div>
+      </Reveal>
     </section>
   );
 }
