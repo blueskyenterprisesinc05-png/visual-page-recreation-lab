@@ -198,7 +198,7 @@ function Problem() {
         <p className="max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:hidden">
           The goal is not to predict every move. It is to study what price is doing with more consistency.
         </p>
-      </div>
+      </Reveal>
 
       <div className={`${wrap} mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
@@ -257,8 +257,9 @@ const stages = [
 
 function Framework() {
   return (
-    <section className="relative border-t bg-card section-y">
-      <div className={wrap}>
+    <section className="relative overflow-hidden border-t bg-card section-y">
+      <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
+      <Reveal className={wrap}>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="eyebrow">The framework</p>
