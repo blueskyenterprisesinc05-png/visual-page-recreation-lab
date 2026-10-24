@@ -417,16 +417,17 @@ function Community() {
           <JoinCta />
           <p className="text-sm text-plum">Continue on Telegram.</p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
 
 function FinalCta() {
   return (
-    <section className="relative border-t section-y lg:py-36">
+    <section className="relative overflow-hidden border-t section-y lg:py-36">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" aria-hidden />
-      <div className={`${wrap} relative flex flex-col items-center text-center`}>
+      <div className="ambient left-1/2 top-1/2 h-[24rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 opacity-80" aria-hidden />
+      <Reveal className={`${wrap} relative flex flex-col items-center text-center`}>
         <h2 className="max-w-3xl text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
           Ready to see the market from <span className="font-display-italic text-[1.1em] text-primary">another perspective?</span>
         </h2>
