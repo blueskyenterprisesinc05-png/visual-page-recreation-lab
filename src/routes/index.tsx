@@ -110,7 +110,7 @@ function Hero() {
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
       <div className="ambient -top-40 left-1/2 h-[26rem] w-[46rem] max-w-none -translate-x-1/3 opacity-70" aria-hidden />
       <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
-        <div className="fade-up">
+        <div className="hero-copy fade-up">
           <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
             <span className="hero-glow relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
@@ -120,7 +120,7 @@ function Hero() {
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Learn to read price through liquidity and market structure, not just predictions.
           </p>
-          <div className="mt-7 flex flex-col items-start gap-3">
+          <div className="hero-next mt-7 flex flex-col items-start gap-3">
             <JoinCta />
             <p className="text-sm text-plum">Join our trading education community on Telegram.</p>
           </div>
@@ -166,7 +166,7 @@ function Problem() {
         <div>
           <p className="eyebrow">The problem is not a lack of signals</p>
           <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-            More information <span className="font-display-italic text-primary">does not create</span> more clarity.
+            More information <span className="text-spotlight font-display-italic text-primary">does not create</span> more clarity.
           </h2>
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
             Charts are crowded with opinions, indicators, and after-the-fact explanations. Without a repeatable process, every move becomes another reason to hesitate, chase, or change the plan.
@@ -200,7 +200,7 @@ function Problem() {
         </p>
       </Reveal>
 
-      <div className={`${wrap} mt-16 flex flex-col items-center lg:mt-24 text-center`}>
+      <div className={`${wrap} problem-next mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
         <p className="mt-6 max-w-xl text-lg text-muted-foreground">
           Clarity does not come from adding another signal. <span className="text-foreground">It comes from giving the chart a sequence.</span>
@@ -268,36 +268,31 @@ function Framework() {
             </h2>
           </div>
           <p className="max-w-md leading-relaxed text-muted-foreground lg:justify-self-end">
-            Our approach connects liquidity, market structure, and price reaction into a framework for studying market behavior.
+            Our approach connects <span className="text-spotlight-soft">liquidity</span>, market structure, and price reaction into a framework for studying market behavior.
           </p>
         </div>
 
-        <ol aria-label="Three-stage Wolf Billion framework" className="framework-steps mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
-          {stages.map((s) => (
-            <li key={s.n} className="framework-step relative flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
-              <div className="flex items-center gap-3 font-mono text-xs text-primary">
-                <span>{s.n}</span>
-                <span className="h-px flex-1 bg-border" />
-                <span className="text-plum">stage {s.stage}/3</span>
-              </div>
-              <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
-              <div className="mt-6 rounded-sm border bg-card p-2">
-                <MarketChart
-                  stage={s.stage}
-                  compact
-                  className="w-full"
-                  title={`Stage ${s.n}: ${s.t}`}
-                  desc={s.d}
-                />
-              </div>
-            </li>
-          ))}
-        </ol>
+        <div className="framework-sequence mt-12 lg:mt-16" aria-label="Three-stage Wolf Billion framework">
+          <div className="framework-rail" aria-hidden="true"><span /><i /><b /></div>
+          <ol className="framework-steps grid gap-8 lg:grid-cols-3 lg:gap-10">
+            {stages.map((s) => (
+              <li key={s.n} className="framework-step relative flex flex-col rounded-md border bg-background card-pad transition-colors duration-300 hover:bg-elevated">
+                <div className="flex items-center gap-3 font-mono text-xs text-primary">
+                  <span className="framework-number grid size-8 place-items-center rounded-full border border-primary/60 bg-card">{s.n}</span>
+                  <span className="h-px flex-1 bg-border" />
+                  <span className="text-plum">stage {s.stage}/3</span>
+                </div>
+                <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
+                <div className="framework-signal mt-6" aria-hidden="true"><span /><i /><b /></div>
+              </li>
+            ))}
+          </ol>
+        </div>
         <p className="mt-10 max-w-2xl border-l-2 border-primary pl-4 font-display-italic text-xl leading-snug sm:text-2xl">
-          We don't start with predictions. We start by examining where liquidity may be, how structure changes, and what price does next.
+          We don&apos;t start with predictions. We start by examining where <span className="text-spotlight-soft">liquidity</span> may be, how structure changes, and what price does next.
         </p>
-        <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
+        <p className="mt-6 text-sm text-plum">This is an abstract learning sequence, not a prediction or a fixed rule for every market movement.</p>
       </Reveal>
     </section>
   );
@@ -324,7 +319,7 @@ function Analysis() {
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
+          <figure className="analysis-frame edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
             <MarketChart
               stage={4}
               numbered
@@ -403,7 +398,7 @@ function Community() {
         </p>
 
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
-        <ul className="mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
+        <ul className="community-flow mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
             <li key={c.n} className="bg-background card-pad transition-colors hover:bg-elevated">
               <span className="font-mono text-xs text-primary">{c.n}</span>
@@ -413,7 +408,7 @@ function Community() {
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-col items-start gap-3">
+        <div className="community-next mt-8 flex flex-col items-start gap-3">
           <JoinCta />
           <p className="text-sm text-plum">Continue on Telegram.</p>
         </div>

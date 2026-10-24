@@ -158,14 +158,118 @@
 .cinematic-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -18px color-mix(in oklab, var(--color-primary) 90%, transparent), inset 0 1px 0 color-mix(in oklab, white 32%, transparent); }
 .cinematic-cta:hover::before { transform: translateX(120%); }
 .hero-glow { text-shadow: 0 0 26px color-mix(in oklab, var(--color-primary) 26%, transparent); }
+.text-spotlight,
+.text-spotlight-soft {
+  position: relative;
+  isolation: isolate;
+}
+.text-spotlight::after,
+.text-spotlight-soft::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.08em;
+  right: -0.08em;
+  bottom: 0.02em;
+  height: 0.28em;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-primary) 28%, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1) 300ms;
+}
+.text-spotlight-soft::after { height: 0.18em; background: color-mix(in oklab, var(--color-primary) 20%, transparent); }
+.reveal-visible .text-spotlight::after,
+.reveal-visible .text-spotlight-soft::after,
+.hero-copy .text-spotlight::after { transform: scaleX(1); }
+.hero-copy > h1 { animation: titleIn 800ms cubic-bezier(.2,.7,.2,1) both; }
+.hero-copy > p { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .12s both; }
+.hero-copy > div { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both; }
+.hero-copy .hero-glow { animation: phraseIn 900ms cubic-bezier(.2,.7,.2,1) .08s both; }
+.hero-copy .hero-glow::after {
+  content: "";
+  position: absolute;
+  left: 0.02em;
+  right: 0.04em;
+  bottom: -0.12em;
+  height: 0.06em;
+  border-radius: 999px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineDraw 700ms cubic-bezier(.2,.7,.2,1) .65s forwards;
+}
+.hero-next { position: relative; }
+.hero-next::before {
+  content: "↓";
+  position: absolute;
+  left: -1.35rem;
+  top: 0.7rem;
+  color: var(--color-primary);
+  font: 0.8rem var(--font-mono);
+  opacity: 0;
+  animation: accentIn 500ms ease 1s forwards;
+}
+.problem-next { position: relative; }
+.problem-next::after {
+  content: "next: sequence";
+  margin-top: 0.65rem;
+  color: var(--color-plum);
+  font: 0.62rem var(--font-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+@keyframes underlineDraw { to { transform: scaleX(1); } }
+@keyframes accentIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: .9; transform: none; } }
+.hero-copy + figure { animation: figureIn 900ms cubic-bezier(.2,.7,.2,1) .18s both; }
+.framework-sequence { position: relative; }
+.framework-steps .framework-step { opacity: .62; transform: translateY(8px); }
+.reveal-visible .framework-step { animation: stageIn 650ms cubic-bezier(.2,.7,.2,1) forwards; }
+.reveal-visible .framework-step:nth-child(1) { animation-delay: 80ms; }
+.reveal-visible .framework-step:nth-child(2) { animation-delay: 520ms; }
+.reveal-visible .framework-step:nth-child(3) { animation-delay: 960ms; }
+.framework-step::before { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 2px; background: var(--color-primary); transition: width 700ms cubic-bezier(.2,.7,.2,1); }
+.reveal-visible .framework-step::before { width: 100%; }
+.framework-number { transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease; }
+.reveal-visible .framework-step:nth-child(1) .framework-number,
+.reveal-visible .framework-step:nth-child(2) .framework-number,
+.reveal-visible .framework-step:nth-child(3) .framework-number { animation: numberFocus 500ms ease both; }
+.reveal-visible .framework-step:nth-child(2) .framework-number { animation-delay: 440ms; }
+.reveal-visible .framework-step:nth-child(3) .framework-number { animation-delay: 880ms; }
+.framework-rail { position: absolute; left: 1.75rem; top: 1.5rem; bottom: 1.5rem; width: 1px; background: var(--color-border); overflow: hidden; }
+.framework-rail span { display: block; width: 100%; height: 0; background: linear-gradient(to bottom, var(--color-primary), color-mix(in oklab, var(--color-primary) 25%, transparent)); transition: height 1.7s cubic-bezier(.2,.7,.2,1) .2s; }
+.framework-rail i, .framework-rail b { position: absolute; display: block; width: .4rem; height: .4rem; border-radius: 999px; background: var(--color-primary); opacity: 0; transform: translateY(-50%); }
+.framework-rail i { top: 34%; left: -.15rem; }
+.framework-rail b { top: 68%; left: -.15rem; }
+.reveal-visible .framework-rail span { height: 100%; }
+.reveal-visible .framework-rail i { animation: railFocus 450ms ease 1.05s forwards; }
+.reveal-visible .framework-rail b { animation: railFocus 450ms ease 1.6s forwards; }
+@keyframes railFocus { from { opacity: 0; box-shadow: 0 0 0 0 transparent; } to { opacity: 1; box-shadow: 0 0 0 5px color-mix(in oklab, var(--color-primary) 14%, transparent); } }
+.framework-signal { display: flex; align-items: end; gap: .4rem; height: 2.25rem; border-top: 1px solid var(--color-border); padding-top: .65rem; }
+.framework-signal span, .framework-signal i, .framework-signal b { display: block; width: 18%; border: 1px solid var(--color-plum); border-radius: 999px 999px 0 0; }
+.framework-signal span { height: 35%; }
+.framework-signal i { height: 65%; border-color: var(--color-primary); }
+.framework-signal b { height: 92%; background: color-mix(in oklab, var(--color-primary) 18%, transparent); }
+@keyframes numberFocus { from { background: var(--color-card); color: var(--color-primary); box-shadow: none; } to { background: var(--color-primary); color: var(--color-primary-foreground); box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-primary) 12%, transparent); } }
+@keyframes titleIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes phraseIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes figureIn { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes stageIn { to { opacity: 1; transform: none; } }
 
 @media (max-width: 480px) {
   .ambient { filter: blur(22px); opacity: .45; }
   .edge-lit { box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-primary) 12%, transparent), 0 14px 40px -34px var(--color-primary); }
   .cinematic-cta:hover { transform: none; }
+  .hero-next::before, .community-next::before { left: -.95rem; }
+  .community-flow li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -.7rem; transform: translateX(-50%); }
+  .framework-rail { left: 1.75rem; }
 }
 
 @media (min-width: 1024px) {
+  .framework-rail { left: 10%; right: 10%; top: 2.5rem; bottom: auto; width: auto; height: 1px; }
+  .framework-rail span { width: 0; height: 100%; transition: width 1.7s cubic-bezier(.2,.7,.2,1) .2s; }
+  .reveal-visible .framework-rail span { width: 100%; height: 100%; }
   .framework-step:not(:last-child)::after {
     content: "→";
     position: absolute;
@@ -184,6 +288,13 @@
   }
 }
 
+.analysis-frame { overflow: hidden; }
+.analysis-frame .market-chart-callout { animation: calloutSettle 700ms cubic-bezier(.2,.7,.2,1) .5s both; }
+@keyframes calloutSettle { from { opacity: .35; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+.community-flow li { position: relative; }
+.community-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -.7rem; top: 50%; z-index: 2; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border: 1px solid var(--color-primary); border-radius: 999px; background: var(--color-background); color: var(--color-primary); font: .7rem var(--font-mono); transform: translateY(-50%); }
+.community-next { position: relative; }
+.community-next::before { content: "↓"; position: absolute; left: -1.35rem; top: .85rem; color: var(--color-primary); font: .8rem var(--font-mono); }
 .story-section { isolation: isolate; }
 .story-section--quiet { background: color-mix(in oklab, var(--color-background) 92%, var(--color-card)); }
 
@@ -191,6 +302,11 @@
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .draw-line { stroke-dashoffset: 0; }
   .fade-up { opacity: 1; transform: none; }
+  .framework-steps .framework-step { opacity: 1; transform: none; }
+  .hero-copy .hero-glow::after { transform: scaleX(1); }
+  .framework-rail span { height: 100%; }
+  .framework-rail i, .framework-rail b { opacity: 1; }
+  .community-flow li:not(:last-child)::after { opacity: 1; }
   html { scroll-behavior: auto; }
 }
 
