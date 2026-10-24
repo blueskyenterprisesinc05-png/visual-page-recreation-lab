@@ -43,7 +43,7 @@ function Nav() {
         <a href="#top" className="whitespace-nowrap text-[0.95rem] font-semibold tracking-tight">
           Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
         </a>
-        <JoinCta size="sm" className="max-[340px]:px-3 max-[340px]:text-xs" />
+        <JoinCta size="sm" className="shrink-0 max-[360px]:h-9 max-[360px]:px-3 max-[360px]:text-[0.8rem]" />
       </div>
     </header>
   );
@@ -53,22 +53,24 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
-      <div className={`${wrap} relative grid items-center gap-10 pb-16 pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:pb-24 lg:pt-24`}>
+      <div className={`${wrap} relative grid items-center gap-10 gap-y-8 pb-14 pt-8 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:pb-24 lg:pt-24`}>
         <div className="fade-up">
-          <h1 className="text-[2.35rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-5xl lg:text-[3.7rem]">
+          <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
-            <span className="font-display-italic text-[1.12em] leading-[0.95] text-primary">harder than it needs to be?</span>
+            <span className="block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
+              harder than it <span className="whitespace-nowrap">needs to be?</span>
+            </span>
           </h1>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Most traders focus on where price is going. We focus on understanding what price is doing, why certain levels matter, and how liquidity fits into the bigger picture.
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Learn to read price through liquidity and market structure, not just predictions.
           </p>
-          <div className="mt-8 flex flex-col items-start gap-3">
+          <div className="mt-7 flex flex-col items-start gap-3">
             <JoinCta />
             <p className="text-sm text-plum">Join our trading education community on Telegram.</p>
           </div>
         </div>
 
-        <figure className="fade-up rounded-md border bg-card p-3 sm:p-5" style={{ animationDelay: ".15s" }}>
+        <figure className="fade-up -mx-2 rounded-md border bg-card p-2.5 sm:mx-0 sm:p-5" style={{ animationDelay: ".15s" }}>
           <div className="mb-2 flex items-center justify-between px-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">
             <span>Educational illustration</span>
             <span className="text-plum">fig. 01</span>
