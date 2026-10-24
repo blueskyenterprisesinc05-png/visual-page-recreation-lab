@@ -62,7 +62,7 @@ export function MarketChart({ stage = 3, compact = false, numbered = false, titl
       {/* Previous high / liquidity */}
       <line x1="180" x2="630" y1={HIGH_Y} y2={HIGH_Y} className="stroke-primary" strokeDasharray="4 5" strokeWidth="1" />
       <circle cx="180" cy={HIGH_Y} r="3.5" className="fill-primary" />
-      <text x="186" y={HIGH_Y - 10} fontSize={fs} className={`${label} font-mono`}>{compact ? "Prev. high" : "Previous high · liquidity"}</text>
+      <text x="186" y={HIGH_Y - 10} fontSize={fs} className={`${label} font-mono`}>{compact ? "Prev. high" : numbered ? "Previous high" : "Previous high · liquidity"}</text>
 
       {stage >= 2 && (
         <g>
@@ -75,7 +75,7 @@ export function MarketChart({ stage = 3, compact = false, numbered = false, titl
       {stage >= 3 && (
         <g>
           <rect x={BLOCK.x} y={BLOCK.y} width={630 - BLOCK.x} height={BLOCK.h} fill={`url(#${id}h)`} className="stroke-primary" strokeWidth="0.8" strokeOpacity="0.6" />
-          <text x={compact ? 470 : 448} y={BLOCK.y - 8} fontSize={fs} className="fill-primary font-mono">{compact ? "Liq. block" : "Liquidity block"}</text>
+          <text x={compact ? 470 : 448} y={stage >= 4 ? BLOCK.y + BLOCK.h + 16 : BLOCK.y - 8} fontSize={fs} className="fill-primary font-mono">{compact ? "Liq. block" : "Liquidity block"}</text>
           <path d="M572 214 L590 262" className="stroke-primary" strokeWidth="1.2" markerEnd="" />
           <path d="M584 254 l6 9 l3-11" fill="none" className="stroke-primary" strokeWidth="1.2" />
           {!compact && <text x="476" y="300" fontSize={fs} className={`${label} font-mono`}>Reaction</text>}
@@ -96,7 +96,7 @@ export function MarketChart({ stage = 3, compact = false, numbered = false, titl
           <g transform="translate(160 132)">{tag(1)}</g>
           <g transform="translate(425 108)">{tag(2)}</g>
           <g transform="translate(470 252)">{tag(3)}</g>
-          <g transform="translate(360 148)">{tag(4)}</g>
+          <g transform="translate(352 186)">{tag(4)}</g>
           <g transform="translate(605 240)">{tag(5)}</g>
           <g transform="translate(500 104)">{tag(6)}</g>
         </g>

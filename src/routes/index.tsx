@@ -166,8 +166,8 @@ function ProblemGlyph({ i }: { i: number }) {
     return (
       <svg viewBox="0 0 220 32" className={common} aria-hidden>
         <path d="M0 26 L60 22 L90 6 L120 24 L220 20" fill="none" className="stroke-muted-foreground" strokeWidth="1.2" />
-        <circle cx="160" cy="22" r="3" className="fill-plum" />
-        <text x="168" y="14" fontSize="9" className="fill-plum font-mono">noticed here</text>
+        <circle cx="150" cy="22" r="3" className="fill-plum" />
+        <text x="140" y="14" fontSize="9" className="fill-plum font-mono">noticed here</text>
       </svg>
     );
   return (
