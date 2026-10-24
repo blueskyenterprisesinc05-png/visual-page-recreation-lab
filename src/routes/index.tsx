@@ -350,7 +350,7 @@ function Analysis() {
           </dl>
         </div>
         <Testimonials />
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -358,7 +358,7 @@ function Analysis() {
 function Behind() {
   return (
     <section className="border-t section-y">
-      <div className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
+      <Reveal className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
         <div>
           <p className="eyebrow">Behind Wolf Billion</p>
           <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
