@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, type ReactNode } from "react";
 import { JoinCta } from "@/components/wb/JoinCta";
 import { MarketChart } from "@/components/wb/MarketChart";
 import { Testimonials } from "@/components/wb/Testimonials";
@@ -46,6 +47,32 @@ export const Route = createFileRoute("/")({
 
 const wrap = "container-page";
 
+/** Fade-and-translate reveal on scroll. The hidden state is only added by JS, so content stays visible without it. */
+function Reveal({ children, className }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.classList.add("reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          el.classList.add("reveal-visible");
+          io.disconnect();
+        }
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen">
@@ -81,11 +108,12 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
+      <div className="ambient -top-40 left-1/2 h-[26rem] w-[46rem] max-w-none -translate-x-1/3 opacity-70" aria-hidden />
       <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
         <div className="fade-up">
           <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
-            <span className="block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
+            <span className="relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
@@ -134,7 +162,7 @@ const problems = [
 function Problem() {
   return (
     <section className="border-t section-y">
-      <div className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
+      <Reveal className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
         <div>
           <p className="eyebrow">The problem is not a lack of signals</p>
           <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
@@ -170,7 +198,7 @@ function Problem() {
         <p className="max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:hidden">
           The goal is not to predict every move. It is to study what price is doing with more consistency.
         </p>
-      </div>
+      </Reveal>
 
       <div className={`${wrap} mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
@@ -229,8 +257,9 @@ const stages = [
 
 function Framework() {
   return (
-    <section className="relative border-t bg-card section-y">
-      <div className={wrap}>
+    <section className="relative overflow-hidden border-t bg-card section-y">
+      <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
+      <Reveal className={wrap}>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="eyebrow">The framework</p>
@@ -245,7 +274,7 @@ function Framework() {
 
         <ol className="mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
           {stages.map((s) => (
-            <li key={s.n} className="flex flex-col bg-background card-pad">
+            <li key={s.n} className="flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
               <div className="flex items-center gap-3 font-mono text-xs text-primary">
                 <span>{s.n}</span>
                 <span className="h-px flex-1 bg-border" />
@@ -269,7 +298,7 @@ function Framework() {
           We don't start with predictions. We start by examining where liquidity may be, how structure changes, and what price does next.
         </p>
         <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -286,15 +315,16 @@ const breakdown = [
 
 function Analysis() {
   return (
-    <section className="border-t section-y">
-      <div className={wrap}>
+    <section className="relative overflow-hidden border-t section-y">
+      <div className="ambient -right-48 top-1/4 h-[26rem] w-[42rem] opacity-60" aria-hidden />
+      <Reveal className={wrap}>
         <p className="eyebrow">The analysis</p>
         <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           See the framework <span className="font-display-italic text-primary">in action.</span>
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="rounded-md border bg-card p-3 sm:p-6 lg:self-start">
+          <figure className="edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
             <MarketChart
               stage={4}
               numbered
@@ -320,7 +350,7 @@ function Analysis() {
           </dl>
         </div>
         <Testimonials />
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -328,7 +358,7 @@ function Analysis() {
 function Behind() {
   return (
     <section className="border-t section-y">
-      <div className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
+      <Reveal className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
         <div>
           <p className="eyebrow">Behind Wolf Billion</p>
           <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
@@ -338,7 +368,7 @@ function Behind() {
         <p className="max-w-xl leading-relaxed text-muted-foreground lg:justify-self-end">
           Wolf Billion is being developed around a liquidity-focused approach to studying price movement, market structure, and disciplined decision-making.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -363,7 +393,7 @@ function Community() {
         <circle cx="200" cy="200" r="7" className="fill-foreground" />
       </svg>
 
-      <div className={`${wrap} relative`}>
+      <Reveal className={`${wrap} relative`}>
         <p className="eyebrow">Beyond the chart</p>
         <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
@@ -387,16 +417,17 @@ function Community() {
           <JoinCta />
           <p className="text-sm text-plum">Continue on Telegram.</p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
 
 function FinalCta() {
   return (
-    <section className="relative border-t section-y lg:py-36">
+    <section className="relative overflow-hidden border-t section-y lg:py-36">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" aria-hidden />
-      <div className={`${wrap} relative flex flex-col items-center text-center`}>
+      <div className="ambient left-1/2 top-1/2 h-[24rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 opacity-80" aria-hidden />
+      <Reveal className={`${wrap} relative flex flex-col items-center text-center`}>
         <h2 className="max-w-3xl text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
           Ready to see the market from <span className="font-display-italic text-[1.1em] text-primary">another perspective?</span>
         </h2>
@@ -404,7 +435,7 @@ function FinalCta() {
           Explore liquidity, understand market structure, and connect with a community focused on disciplined learning.
         </p>
         <JoinCta className="mt-10" />
-      </div>
+      </Reveal>
     </section>
   );
 }
