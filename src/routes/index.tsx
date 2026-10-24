@@ -112,21 +112,21 @@ function Hero() {
       <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
         <div className="hero-copy fade-up">
           <h1 className="hero-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
-            What if you've been making trading{" "}
-            <span className="hero-glow relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
+            <span className="hero-focus-rest">What if you've been making trading{" "}</span>
+            <span className="hero-glow relative z-10 block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Learn to read price through liquidity and market structure, not just predictions.
           </p>
-          <div className="hero-next mt-7 flex flex-col items-start gap-3">
+          <div className="hero-focus-rest hero-next mt-7 flex flex-col items-start gap-3">
             <JoinCta />
             <p className="text-sm text-plum">Join our trading education community on Telegram.</p>
           </div>
         </div>
 
-        <figure className="fade-up -mx-2 rounded-md border bg-card p-3 sm:mx-0 sm:p-6" style={{ animationDelay: ".15s" }}>
+        <figure className="hero-focus-rest fade-up -mx-2 rounded-md border bg-card p-3 sm:mx-0 sm:p-6" style={{ animationDelay: ".15s" }}>
           <div className="mb-2 flex items-center justify-between px-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">
             <span>Educational illustration</span>
             <span className="text-plum">fig. 01</span>
