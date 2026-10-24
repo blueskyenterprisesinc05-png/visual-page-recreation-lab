@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 type Props = { size?: "sm" | "lg"; className?: string };
 
 const base =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-colors";
+  "cinematic-cta inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-colors";
 const sizes = { sm: "h-10 px-4 text-sm", lg: "h-12 px-6 text-[0.95rem]" };
 
 export function JoinCta({ size = "lg", className }: Props) {
@@ -14,7 +14,11 @@ export function JoinCta({ size = "lg", className }: Props) {
       <span className={cn("inline-flex flex-col items-start gap-1.5", className)}>
         <span
           aria-disabled="true"
-          className={cn(base, sizes[size], "cursor-not-allowed border border-plum text-muted-foreground")}
+          className={cn(
+            base,
+            sizes[size],
+            "cursor-not-allowed border border-plum text-muted-foreground",
+          )}
         >
           Join the Community
         </span>
