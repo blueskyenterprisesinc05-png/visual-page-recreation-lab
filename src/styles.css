@@ -298,6 +298,42 @@
 .story-section { isolation: isolate; }
 .story-section--quiet { background: color-mix(in oklab, var(--color-background) 92%, var(--color-card)); }
 
+/* Scene-specific motion: each chapter has its own editorial rhythm. */
+.hero-title { overflow: hidden; }
+.hero-title > * { display: inline-block; }
+.hero-title { animation: maskLift 900ms cubic-bezier(.16,1,.3,1) both; }
+.hero-glow { animation: phraseIn 900ms cubic-bezier(.16,1,.3,1) .12s both; }
+@keyframes maskLift { from { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(18px); } to { opacity: 1; clip-path: inset(0); transform: none; } }
+
+.problem-fragment { animation: fragmentSettle 720ms cubic-bezier(.16,1,.3,1) both; }
+.problem-fragment:nth-child(1) { animation-delay: 80ms; }
+.problem-fragment:nth-child(2) { animation-delay: 180ms; }
+.problem-fragment:nth-child(3) { animation-delay: 280ms; }
+.problem-fragment:nth-child(1) .mt-4 { animation: driftIn 700ms ease-out both; }
+.problem-fragment:nth-child(2) .mt-4 { animation: driftIn 700ms ease-out .12s both; }
+.problem-fragment:nth-child(3) .mt-4 { animation: driftIn 700ms ease-out .2s both; }
+@keyframes fragmentSettle { from { opacity: 0; transform: translateX(18px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes driftIn { from { opacity: .2; transform: translateX(-12px); } to { opacity: 1; transform: none; } }
+
+.framework-focus { position: absolute; inset: 0 auto auto 0; width: 0; height: 2px; background: var(--color-primary); opacity: .9; }
+.reveal-visible .framework-step:nth-child(1) .framework-focus { animation: focusSweep 900ms ease 180ms forwards; }
+.reveal-visible .framework-step:nth-child(2) .framework-focus { animation: focusSweep 900ms ease 620ms forwards; }
+.reveal-visible .framework-step:nth-child(3) .framework-focus { animation: focusSweep 900ms ease 1060ms forwards; }
+@keyframes focusSweep { 0% { width: 0; opacity: 0; } 20% { opacity: 1; } 100% { width: 100%; opacity: 0; } }
+
+.analysis-frame { transform-origin: 42% 38%; }
+.reveal-visible .analysis-frame { animation: documentaryPush 1200ms cubic-bezier(.2,.7,.2,1) both; }
+.analysis-frame::after { content: "ALIGN / VERIFY"; position: absolute; right: 1rem; top: 1rem; color: var(--color-primary); font: .58rem var(--font-mono); letter-spacing: .14em; opacity: 0; }
+.reveal-visible .analysis-frame::after { animation: annotationIn 500ms ease 700ms forwards; }
+@keyframes documentaryPush { from { opacity: .45; transform: scale(.975); } to { opacity: 1; transform: scale(1); } }
+@keyframes annotationIn { from { opacity: 0; transform: translateX(8px); } to { opacity: .8; transform: none; } }
+
+.community-card { animation: warmSettle 850ms cubic-bezier(.2,.7,.2,1) both; }
+.community-card:nth-child(1) { animation-delay: 60ms; }
+.community-card:nth-child(2) { animation-delay: 180ms; }
+.community-card:nth-child(3) { animation-delay: 300ms; }
+@keyframes warmSettle { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .draw-line { stroke-dashoffset: 0; }

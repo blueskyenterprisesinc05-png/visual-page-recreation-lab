@@ -111,7 +111,7 @@ function Hero() {
       <div className="ambient -top-40 left-1/2 h-[26rem] w-[46rem] max-w-none -translate-x-1/3 opacity-70" aria-hidden />
       <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
         <div className="hero-copy fade-up">
-          <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
+          <h1 className="hero-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
             <span className="hero-glow relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
@@ -179,7 +179,7 @@ function Problem() {
         <ol className="relative">
           <span className="absolute bottom-6 left-[1.05rem] top-6 w-px bg-gradient-to-b from-plum via-border to-primary" aria-hidden />
           {problems.map((p, i) => (
-            <li key={p.n} className="relative flex gap-5 pb-10 last:pb-0">
+            <li key={p.n} className="problem-fragment relative flex gap-5 pb-10 last:pb-0">
               <span className={`relative z-10 grid size-9 shrink-0 place-items-center rounded-full border font-mono text-xs ${i === 2 ? "border-primary bg-primary text-primary-foreground" : "bg-background text-muted-foreground"}`}>
                 {p.n}
               </span>
@@ -285,6 +285,7 @@ function Framework() {
                 <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
                 <div className="framework-signal mt-6" aria-hidden="true"><span /><i /><b /></div>
+                <span className="framework-focus" aria-hidden="true" />
               </li>
             ))}
           </ol>
@@ -400,7 +401,7 @@ function Community() {
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
         <ul className="community-flow mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
-            <li key={c.n} className="bg-background card-pad transition-colors hover:bg-elevated">
+            <li key={c.n} className="community-card bg-background card-pad transition-colors hover:bg-elevated">
               <span className="font-mono text-xs text-primary">{c.n}</span>
               <h3 className="mt-4 text-lg font-medium">{c.t}</h3>
               <p className="mt-2 text-muted-foreground">{c.d}</p>
