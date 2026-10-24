@@ -264,6 +264,9 @@ function Framework() {
             </li>
           ))}
         </ol>
+        <p className="mt-10 max-w-2xl border-l-2 border-primary pl-4 font-display-italic text-xl leading-snug sm:text-2xl">
+          We don't start with predictions. We start by examining where liquidity may be, how structure changes, and what price does next.
+        </p>
         <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
       </div>
     </section>
@@ -321,10 +324,28 @@ function Analysis() {
   );
 }
 
+function Behind() {
+  return (
+    <section className="border-t section-y">
+      <div className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
+        <div>
+          <p className="eyebrow">Behind Wolf Billion</p>
+          <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+            Built around a <span className="font-display-italic text-primary">different way</span> of studying price.
+          </h2>
+        </div>
+        <p className="max-w-xl leading-relaxed text-muted-foreground lg:justify-self-end">
+          Wolf Billion is being developed around a liquidity-focused approach to studying price movement, market structure, and disciplined decision-making.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 const community = [
-  { n: "01", t: "Market Breakdowns", d: "Educational examples of liquidity and price structure." },
-  { n: "02", t: "Trading Discussions", d: "Explore chart interpretations and different market perspectives." },
-  { n: "03", t: "Structured Learning", d: "Connect isolated trading concepts into a more consistent analytical framework." },
+  { n: "01", t: "Market Breakdowns", d: "Learn how liquidity and market structure can be examined through educational chart breakdowns." },
+  { n: "02", t: "Trading Discussions", d: "Explore trading ideas, chart interpretations, and different analytical perspectives." },
+  { n: "03", t: "Structured Learning", d: "Develop a more consistent understanding of liquidity, Break of Structure, and Liquidity Blocks." },
 ];
 
 function Community() {
