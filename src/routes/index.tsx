@@ -55,6 +55,7 @@ function Index() {
         <Problem />
         <Framework />
         <Analysis />
+        <Behind />
         <Community />
         <FinalCta />
       </main>
@@ -368,7 +369,7 @@ function Community() {
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join Wolf Billion on Telegram to explore how liquidity and market structure are studied, discuss chart interpretations, and develop your understanding with other traders.
+          Join our Telegram community to explore trading concepts, study market structure, and take part in discussions focused on understanding price.
         </p>
 
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
