@@ -272,32 +272,27 @@ function Framework() {
           </p>
         </div>
 
-        <ol aria-label="Three-stage Wolf Billion framework" className="framework-steps mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
-          {stages.map((s) => (
-            <li key={s.n} className="framework-step relative flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
-              <div className="flex items-center gap-3 font-mono text-xs text-primary">
-                <span>{s.n}</span>
-                <span className="h-px flex-1 bg-border" />
-                <span className="text-plum">stage {s.stage}/3</span>
-              </div>
-              <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
-              <div className="mt-6 rounded-sm border bg-card p-2">
-                <MarketChart
-                  stage={s.stage}
-                  compact
-                  className="w-full"
-                  title={`Stage ${s.n}: ${s.t}`}
-                  desc={s.d}
-                />
-              </div>
-            </li>
-          ))}
-        </ol>
+        <div className="framework-sequence mt-12 lg:mt-16" aria-label="Three-stage Wolf Billion framework">
+          <div className="framework-rail" aria-hidden="true"><span /></div>
+          <ol className="framework-steps grid gap-8 lg:grid-cols-3 lg:gap-10">
+            {stages.map((s) => (
+              <li key={s.n} className="framework-step relative flex flex-col rounded-md border bg-background card-pad transition-colors duration-300 hover:bg-elevated">
+                <div className="flex items-center gap-3 font-mono text-xs text-primary">
+                  <span className="framework-number grid size-8 place-items-center rounded-full border border-primary/60 bg-card">{s.n}</span>
+                  <span className="h-px flex-1 bg-border" />
+                  <span className="text-plum">stage {s.stage}/3</span>
+                </div>
+                <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
+                <div className="framework-signal mt-6" aria-hidden="true"><span /><i /><b /></div>
+              </li>
+            ))}
+          </ol>
+        </div>
         <p className="mt-10 max-w-2xl border-l-2 border-primary pl-4 font-display-italic text-xl leading-snug sm:text-2xl">
           We don&apos;t start with predictions. We start by examining where <span className="text-spotlight-soft">liquidity</span> may be, how structure changes, and what price does next.
         </p>
-        <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
+        <p className="mt-6 text-sm text-plum">This is an abstract learning sequence, not a prediction or a fixed rule for every market movement.</p>
       </Reveal>
     </section>
   );

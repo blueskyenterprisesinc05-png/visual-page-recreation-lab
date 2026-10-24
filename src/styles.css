@@ -187,13 +187,29 @@
 .hero-copy > div { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both; }
 .hero-copy .hero-glow { animation: phraseIn 900ms cubic-bezier(.2,.7,.2,1) .08s both; }
 .hero-copy + figure { animation: figureIn 900ms cubic-bezier(.2,.7,.2,1) .18s both; }
+.framework-sequence { position: relative; }
 .framework-steps .framework-step { opacity: .62; transform: translateY(8px); }
 .reveal-visible .framework-step { animation: stageIn 650ms cubic-bezier(.2,.7,.2,1) forwards; }
 .reveal-visible .framework-step:nth-child(1) { animation-delay: 80ms; }
-.reveal-visible .framework-step:nth-child(2) { animation-delay: 280ms; }
-.reveal-visible .framework-step:nth-child(3) { animation-delay: 480ms; }
+.reveal-visible .framework-step:nth-child(2) { animation-delay: 520ms; }
+.reveal-visible .framework-step:nth-child(3) { animation-delay: 960ms; }
 .framework-step::before { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 2px; background: var(--color-primary); transition: width 700ms cubic-bezier(.2,.7,.2,1); }
 .reveal-visible .framework-step::before { width: 100%; }
+.framework-number { transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease; }
+.reveal-visible .framework-step:nth-child(1) .framework-number,
+.reveal-visible .framework-step:nth-child(2) .framework-number,
+.reveal-visible .framework-step:nth-child(3) .framework-number { animation: numberFocus 500ms ease both; }
+.reveal-visible .framework-step:nth-child(2) .framework-number { animation-delay: 440ms; }
+.reveal-visible .framework-step:nth-child(3) .framework-number { animation-delay: 880ms; }
+.framework-rail { position: absolute; left: 1.75rem; top: 1.5rem; bottom: 1.5rem; width: 1px; background: var(--color-border); overflow: hidden; }
+.framework-rail span { display: block; width: 100%; height: 0; background: linear-gradient(to bottom, var(--color-primary), color-mix(in oklab, var(--color-primary) 25%, transparent)); transition: height 1.7s cubic-bezier(.2,.7,.2,1) .2s; }
+.reveal-visible .framework-rail span { height: 100%; }
+.framework-signal { display: flex; align-items: end; gap: .4rem; height: 2.25rem; border-top: 1px solid var(--color-border); padding-top: .65rem; }
+.framework-signal span, .framework-signal i, .framework-signal b { display: block; width: 18%; border: 1px solid var(--color-plum); border-radius: 999px 999px 0 0; }
+.framework-signal span { height: 35%; }
+.framework-signal i { height: 65%; border-color: var(--color-primary); }
+.framework-signal b { height: 92%; background: color-mix(in oklab, var(--color-primary) 18%, transparent); }
+@keyframes numberFocus { from { background: var(--color-card); color: var(--color-primary); box-shadow: none; } to { background: var(--color-primary); color: var(--color-primary-foreground); box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-primary) 12%, transparent); } }
 @keyframes titleIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes phraseIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes figureIn { from { opacity: 0; transform: translateY(18px) scale(.985); } to { opacity: 1; transform: none; } }
@@ -206,6 +222,9 @@
 }
 
 @media (min-width: 1024px) {
+  .framework-rail { left: 10%; right: 10%; top: 2.5rem; bottom: auto; width: auto; height: 1px; }
+  .framework-rail span { width: 0; height: 100%; transition: width 1.7s cubic-bezier(.2,.7,.2,1) .2s; }
+  .reveal-visible .framework-rail span { width: 100%; height: 100%; }
   .framework-step:not(:last-child)::after {
     content: "→";
     position: absolute;
