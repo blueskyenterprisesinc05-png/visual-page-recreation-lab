@@ -116,3 +116,23 @@
   .fade-up { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Spacing system */
+@utility container-page {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (max-width: 359px) { padding-inline: 1.125rem; }
+  @media (min-width: 768px) { padding-inline: 3rem; }
+  @media (min-width: 1280px) { padding-inline: 4rem; }
+}
+@utility section-y {
+  padding-block: 4.5rem;
+  @media (min-width: 1024px) { padding-block: 8rem; }
+}
+@utility card-pad {
+  padding: 1.25rem;
+  @media (min-width: 375px) { padding: 1.5rem; }
+  @media (min-width: 1024px) { padding: 2rem; }
+}

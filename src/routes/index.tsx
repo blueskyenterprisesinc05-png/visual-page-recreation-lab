@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const wrap = "mx-auto w-full max-w-6xl px-5 sm:px-8";
+const wrap = "container-page";
 
 function Index() {
   return (
@@ -39,7 +39,7 @@ function Index() {
 function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur-sm" style={{ paddingTop: "env(safe-area-inset-top)" }}>
-      <div className={`${wrap} flex h-16 items-center justify-between gap-3`}>
+      <div className={`${wrap} flex h-[4.25rem] items-center justify-between gap-3`}>
         <a href="#top" className="whitespace-nowrap text-[0.95rem] font-semibold tracking-tight">
           Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
         </a>
@@ -53,7 +53,7 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
-      <div className={`${wrap} relative grid items-center gap-10 gap-y-8 pb-14 pt-8 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:pb-24 lg:pt-24`}>
+      <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
         <div className="fade-up">
           <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
@@ -61,7 +61,7 @@ function Hero() {
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Learn to read price through liquidity and market structure, not just predictions.
           </p>
           <div className="mt-7 flex flex-col items-start gap-3">
@@ -70,7 +70,7 @@ function Hero() {
           </div>
         </div>
 
-        <figure className="fade-up -mx-2 rounded-md border bg-card p-2.5 sm:mx-0 sm:p-5" style={{ animationDelay: ".15s" }}>
+        <figure className="fade-up -mx-2 rounded-md border bg-card p-3 sm:mx-0 sm:p-6" style={{ animationDelay: ".15s" }}>
           <div className="mb-2 flex items-center justify-between px-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">
             <span>Educational illustration</span>
             <span className="text-plum">fig. 01</span>
@@ -105,7 +105,7 @@ const problems = [
 
 function Problem() {
   return (
-    <section className="border-t py-20 lg:py-28">
+    <section className="border-t section-y">
       <div className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
         <div>
           <p className="eyebrow">The problem is not a lack of signals</p>
@@ -144,7 +144,7 @@ function Problem() {
         </p>
       </div>
 
-      <div className={`${wrap} mt-20 flex flex-col items-center text-center`}>
+      <div className={`${wrap} mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
         <p className="mt-6 max-w-xl text-lg text-muted-foreground">
           Clarity does not come from adding another signal. <span className="text-foreground">It comes from giving the chart a sequence.</span>
@@ -201,7 +201,7 @@ const stages = [
 
 function Framework() {
   return (
-    <section className="relative border-t bg-card py-20 lg:py-28">
+    <section className="relative border-t bg-card section-y">
       <div className={wrap}>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
@@ -215,9 +215,9 @@ function Framework() {
           </p>
         </div>
 
-        <ol className="mt-14 grid gap-px overflow-hidden rounded-md border bg-border lg:grid-cols-3">
+        <ol className="mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
           {stages.map((s) => (
-            <li key={s.n} className="flex flex-col bg-background p-5 sm:p-7">
+            <li key={s.n} className="flex flex-col bg-background card-pad">
               <div className="flex items-center gap-3 font-mono text-xs text-primary">
                 <span>{s.n}</span>
                 <span className="h-px flex-1 bg-border" />
@@ -255,7 +255,7 @@ const breakdown = [
 
 function Analysis() {
   return (
-    <section className="border-t py-20 lg:py-28">
+    <section className="border-t section-y">
       <div className={wrap}>
         <p className="eyebrow">The analysis</p>
         <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
@@ -263,7 +263,7 @@ function Analysis() {
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="rounded-md border bg-card p-3 sm:p-5 lg:self-start">
+          <figure className="rounded-md border bg-card p-3 sm:p-6 lg:self-start">
             <MarketChart
               stage={4}
               numbered
@@ -302,7 +302,7 @@ const community = [
 
 function Community() {
   return (
-    <section className="relative overflow-hidden border-t bg-card py-20 lg:py-28">
+    <section className="relative overflow-hidden border-t bg-card section-y">
       <svg viewBox="0 0 400 400" className="pointer-events-none absolute -right-24 top-10 w-[420px] opacity-40 lg:right-0" aria-hidden>
         {[60, 110, 160].map((r) => <circle key={r} cx="200" cy="200" r={r} fill="none" className="stroke-border" />)}
         {[[200, 40], [339, 280], [61, 280], [310, 90], [90, 310], [200, 360]].map(([x, y]) => (
@@ -326,7 +326,7 @@ function Community() {
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
         <ul className="mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
-            <li key={c.n} className="bg-background p-6 transition-colors hover:bg-elevated">
+            <li key={c.n} className="bg-background card-pad transition-colors hover:bg-elevated">
               <span className="font-mono text-xs text-primary">{c.n}</span>
               <h3 className="mt-4 text-lg font-medium">{c.t}</h3>
               <p className="mt-2 text-muted-foreground">{c.d}</p>
@@ -334,7 +334,7 @@ function Community() {
           ))}
         </ul>
 
-        <div className="mt-10 flex flex-col items-start gap-3">
+        <div className="mt-8 flex flex-col items-start gap-3">
           <JoinCta />
           <p className="text-sm text-plum">Continue on Telegram.</p>
         </div>
@@ -345,7 +345,7 @@ function Community() {
 
 function FinalCta() {
   return (
-    <section className="relative border-t py-24 lg:py-36">
+    <section className="relative border-t section-y lg:py-36">
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" aria-hidden />
       <div className={`${wrap} relative flex flex-col items-center text-center`}>
         <h2 className="max-w-3xl text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
@@ -362,7 +362,7 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t py-12" style={{ paddingBottom: "max(3rem, env(safe-area-inset-bottom))" }}>
+    <footer className="border-t py-14" style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}>
       <div className={`${wrap} grid gap-8 md:grid-cols-[1fr_1.4fr]`}>
         <div>
           <p className="font-semibold tracking-tight">
