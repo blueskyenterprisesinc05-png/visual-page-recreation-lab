@@ -257,7 +257,7 @@ const stages = [
 
 function Framework() {
   return (
-    <section className="relative overflow-hidden border-t bg-card section-y">
+    <section className="relative overflow-hidden border-t bg-card section-y story-section">
       <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
       <Reveal className={wrap}>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
@@ -272,9 +272,9 @@ function Framework() {
           </p>
         </div>
 
-        <ol className="mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
+        <ol aria-label="Three-stage Wolf Billion framework" className="framework-steps mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
           {stages.map((s) => (
-            <li key={s.n} className="flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
+            <li key={s.n} className="framework-step relative flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
               <div className="flex items-center gap-3 font-mono text-xs text-primary">
                 <span>{s.n}</span>
                 <span className="h-px flex-1 bg-border" />
@@ -315,7 +315,7 @@ const breakdown = [
 
 function Analysis() {
   return (
-    <section className="relative overflow-hidden border-t section-y">
+    <section className="relative overflow-hidden border-t section-y story-section story-section--quiet">
       <div className="ambient -right-48 top-1/4 h-[26rem] w-[42rem] opacity-60" aria-hidden />
       <Reveal className={wrap}>
         <p className="eyebrow">The analysis</p>
