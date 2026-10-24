@@ -113,7 +113,7 @@ function Hero() {
         <div className="fade-up">
           <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
-            <span className="block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
+            <span className="relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
@@ -162,7 +162,7 @@ const problems = [
 function Problem() {
   return (
     <section className="border-t section-y">
-      <div className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
+      <Reveal className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
         <div>
           <p className="eyebrow">The problem is not a lack of signals</p>
           <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
