@@ -32,12 +32,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --shadow-glow:
-    0 0 16px -2px color-mix(in oklab, var(--primary) 55%, transparent),
-    0 0 40px -6px color-mix(in oklab, var(--primary) 30%, transparent);
-  --shadow-glow-strong:
-    0 0 22px -2px color-mix(in oklab, var(--primary) 70%, transparent),
-    0 0 56px -6px color-mix(in oklab, var(--primary) 40%, transparent);
 }
 
 :root {
