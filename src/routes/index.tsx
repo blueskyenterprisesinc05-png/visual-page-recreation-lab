@@ -6,12 +6,39 @@ import { Testimonials } from "@/components/wb/Testimonials";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wolf Billion — Liquidity & Market Structure Education" },
-      { name: "description", content: "Clarity over noise. Process over predictions. Study liquidity and market structure with the Wolf Billion trading education community." },
-      { property: "og:title", content: "Wolf Billion — Trading Education Community" },
-      { property: "og:description", content: "Study how liquidity and market structure fit together. Join our trading education community on Telegram." },
+      { title: "Wolf Billion | Liquidity & Market Structure Education" },
+      { name: "description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
+      { property: "og:title", content: "Wolf Billion | Liquidity & Market Structure Education" },
+      { property: "og:description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Wolf Billion" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Wolf Billion | Liquidity & Market Structure Education" },
+      { name: "twitter:description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Wolf Billion",
+              description:
+                "A trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price.",
+              sameAs: ["https://t.me/+K4fPSalRPnsxNTU0"],
+            },
+            {
+              "@type": "WebPage",
+              name: "Wolf Billion | Liquidity & Market Structure Education",
+              description:
+                "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community.",
+              isPartOf: { "@type": "WebSite", name: "Wolf Billion" },
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -28,6 +55,7 @@ function Index() {
         <Problem />
         <Framework />
         <Analysis />
+        <Behind />
         <Community />
         <FinalCta />
       </main>
@@ -187,15 +215,15 @@ function ProblemGlyph({ i }: { i: number }) {
 const stages = [
   {
     n: "01", t: "Liquidity", stage: 1 as const,
-    d: "Price approaches a previous high or low — an area the framework examines for possible liquidity. These reference levels are where many orders tend to rest, so we mark them before anything else.",
+    d: "Study previous highs and lows as possible liquidity reference areas — the levels the framework examines before anything else.",
   },
   {
     n: "02", t: "Structure", stage: 2 as const,
-    d: "Price moves beyond the relevant level and subsequently changes structure. A Break of Structure (BOS) is read as a shift in context — and the participation it can induce — not as a guarantee of direction.",
+    d: "Examine breaks of previous highs and lows through our Break of Structure framework, including how such movements may induce market participation.",
   },
   {
-    n: "03", t: "Reaction & Liquidity Blocks", stage: 3 as const,
-    d: "We study the resulting reaction and the liquidity block it originated from. That zone gives analytical context and a reference for where the interpretation would be invalidated.",
+    n: "03", t: "Liquidity Blocks & Reaction", stage: 3 as const,
+    d: "Study relevant liquidity blocks, price reactions, and the areas used to reason about invalidation and risk.",
   },
 ];
 
@@ -237,6 +265,9 @@ function Framework() {
             </li>
           ))}
         </ol>
+        <p className="mt-10 max-w-2xl border-l-2 border-primary pl-4 font-display-italic text-xl leading-snug sm:text-2xl">
+          We don't start with predictions. We start by examining where liquidity may be, how structure changes, and what price does next.
+        </p>
         <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
       </div>
     </section>
@@ -294,10 +325,28 @@ function Analysis() {
   );
 }
 
+function Behind() {
+  return (
+    <section className="border-t section-y">
+      <div className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
+        <div>
+          <p className="eyebrow">Behind Wolf Billion</p>
+          <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+            Built around a <span className="font-display-italic text-primary">different way</span> of studying price.
+          </h2>
+        </div>
+        <p className="max-w-xl leading-relaxed text-muted-foreground lg:justify-self-end">
+          Wolf Billion is being developed around a liquidity-focused approach to studying price movement, market structure, and disciplined decision-making.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 const community = [
-  { n: "01", t: "Market Breakdowns", d: "Educational examples of liquidity and price structure." },
-  { n: "02", t: "Trading Discussions", d: "Explore chart interpretations and different market perspectives." },
-  { n: "03", t: "Structured Learning", d: "Connect isolated trading concepts into a more consistent analytical framework." },
+  { n: "01", t: "Market Breakdowns", d: "Learn how liquidity and market structure can be examined through educational chart breakdowns." },
+  { n: "02", t: "Trading Discussions", d: "Explore trading ideas, chart interpretations, and different analytical perspectives." },
+  { n: "03", t: "Structured Learning", d: "Develop a more consistent understanding of liquidity, Break of Structure, and Liquidity Blocks." },
 ];
 
 function Community() {
@@ -320,7 +369,7 @@ function Community() {
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join Wolf Billion on Telegram to explore how liquidity and market structure are studied, discuss chart interpretations, and develop your understanding with other traders.
+          Join our Telegram community to explore trading concepts, study market structure, and take part in discussions focused on understanding price.
         </p>
 
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
