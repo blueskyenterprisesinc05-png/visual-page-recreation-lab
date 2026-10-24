@@ -113,7 +113,7 @@ function Hero() {
         <div className="fade-up">
           <h1 className="max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             What if you've been making trading{" "}
-            <span className="relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
+            <span className="hero-glow relative block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
@@ -257,7 +257,7 @@ const stages = [
 
 function Framework() {
   return (
-    <section className="relative overflow-hidden border-t bg-card section-y">
+    <section className="relative overflow-hidden border-t bg-card section-y story-section">
       <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
       <Reveal className={wrap}>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
@@ -272,9 +272,9 @@ function Framework() {
           </p>
         </div>
 
-        <ol className="mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
+        <ol aria-label="Three-stage Wolf Billion framework" className="framework-steps mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
           {stages.map((s) => (
-            <li key={s.n} className="flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
+            <li key={s.n} className="framework-step relative flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
               <div className="flex items-center gap-3 font-mono text-xs text-primary">
                 <span>{s.n}</span>
                 <span className="h-px flex-1 bg-border" />
@@ -315,7 +315,7 @@ const breakdown = [
 
 function Analysis() {
   return (
-    <section className="relative overflow-hidden border-t section-y">
+    <section className="relative overflow-hidden border-t section-y story-section story-section--quiet">
       <div className="ambient -right-48 top-1/4 h-[26rem] w-[42rem] opacity-60" aria-hidden />
       <Reveal className={wrap}>
         <p className="eyebrow">The analysis</p>
