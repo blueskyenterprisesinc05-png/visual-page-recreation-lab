@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, type ReactNode } from "react";
 import { JoinCta } from "@/components/wb/JoinCta";
 import { MarketChart } from "@/components/wb/MarketChart";
 import { Testimonials } from "@/components/wb/Testimonials";
