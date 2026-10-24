@@ -274,7 +274,7 @@ function Framework() {
 
         <ol className="mt-12 grid gap-px lg:mt-16 overflow-hidden rounded-md border bg-border lg:grid-cols-3">
           {stages.map((s) => (
-            <li key={s.n} className="flex flex-col bg-background card-pad">
+            <li key={s.n} className="flex flex-col bg-background card-pad transition-colors duration-300 hover:bg-elevated">
               <div className="flex items-center gap-3 font-mono text-xs text-primary">
                 <span>{s.n}</span>
                 <span className="h-px flex-1 bg-border" />
@@ -298,7 +298,7 @@ function Framework() {
           We don't start with predictions. We start by examining where liquidity may be, how structure changes, and what price does next.
         </p>
         <p className="mt-6 text-sm text-plum">Each stage builds on the same illustrative chart. Concepts are educational, not predictive rules.</p>
-      </div>
+      </Reveal>
     </section>
   );
 }
