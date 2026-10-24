@@ -75,7 +75,7 @@ export function MarketChart({ stage = 3, compact = false, numbered = false, titl
       {stage >= 3 && (
         <g>
           <rect x={BLOCK.x} y={BLOCK.y} width={630 - BLOCK.x} height={BLOCK.h} fill={`url(#${id}h)`} className="stroke-primary" strokeWidth="0.8" strokeOpacity="0.6" />
-          <text x={compact ? 470 : 448} y={stage >= 4 ? BLOCK.y + BLOCK.h + 16 : BLOCK.y - 8} fontSize={fs} className="fill-primary font-mono">{compact ? "Liq. block" : "Liquidity block"}</text>
+          <text x={compact ? 470 : 448} y={stage >= 4 ? BLOCK.y + 25 : BLOCK.y - 8} fontSize={fs} className="fill-primary font-mono">{compact ? "Liq. block" : "Liquidity block"}</text>
           <path d="M572 214 L590 262" className="stroke-primary" strokeWidth="1.2" markerEnd="" />
           <path d="M584 254 l6 9 l3-11" fill="none" className="stroke-primary" strokeWidth="1.2" />
           {!compact && <text x="476" y="300" fontSize={fs} className={`${label} font-mono`}>Reaction</text>}
