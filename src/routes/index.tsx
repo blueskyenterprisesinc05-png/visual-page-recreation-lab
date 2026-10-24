@@ -315,15 +315,16 @@ const breakdown = [
 
 function Analysis() {
   return (
-    <section className="border-t section-y">
-      <div className={wrap}>
+    <section className="relative overflow-hidden border-t section-y">
+      <div className="ambient -right-48 top-1/4 h-[26rem] w-[42rem] opacity-60" aria-hidden />
+      <Reveal className={wrap}>
         <p className="eyebrow">The analysis</p>
         <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           See the framework <span className="font-display-italic text-primary">in action.</span>
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="rounded-md border bg-card p-3 sm:p-6 lg:self-start">
+          <figure className="edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
             <MarketChart
               stage={4}
               numbered
