@@ -368,7 +368,7 @@ function Behind() {
         <p className="max-w-xl leading-relaxed text-muted-foreground lg:justify-self-end">
           Wolf Billion is being developed around a liquidity-focused approach to studying price movement, market structure, and disciplined decision-making.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -393,7 +393,7 @@ function Community() {
         <circle cx="200" cy="200" r="7" className="fill-foreground" />
       </svg>
 
-      <div className={`${wrap} relative`}>
+      <Reveal className={`${wrap} relative`}>
         <p className="eyebrow">Beyond the chart</p>
         <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
