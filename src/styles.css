@@ -32,6 +32,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-primary-glow: var(--primary-glow);
+  --shadow-cta: 0 6px 24px -10px color-mix(in oklab, var(--primary) 45%, transparent);
+  --shadow-cta-hover: 0 10px 36px -10px color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
 :root {
@@ -50,6 +53,7 @@
   --muted: oklch(0.245 0.012 300);
   --muted-foreground: oklch(0.77 0.02 310);  /* #B9B0C2 */
   --plum: oklch(0.52 0.018 310);             /* #6D6774 */
+  --primary-glow: oklch(0.84 0.06 300);      /* #D7C3FA */
   --accent: var(--elevated);
   --accent-foreground: var(--foreground);
   --destructive: oklch(0.65 0.15 25);
