@@ -120,7 +120,7 @@ function Hero() {
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             Learn to read price through liquidity and market structure, not just predictions.
           </p>
-          <div className="mt-7 flex flex-col items-start gap-3">
+          <div className="hero-next mt-7 flex flex-col items-start gap-3">
             <JoinCta />
             <p className="text-sm text-plum">Join our trading education community on Telegram.</p>
           </div>
@@ -200,7 +200,7 @@ function Problem() {
         </p>
       </Reveal>
 
-      <div className={`${wrap} mt-16 flex flex-col items-center lg:mt-24 text-center`}>
+      <div className={`${wrap} problem-next mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
         <p className="mt-6 max-w-xl text-lg text-muted-foreground">
           Clarity does not come from adding another signal. <span className="text-foreground">It comes from giving the chart a sequence.</span>
@@ -273,7 +273,7 @@ function Framework() {
         </div>
 
         <div className="framework-sequence mt-12 lg:mt-16" aria-label="Three-stage Wolf Billion framework">
-          <div className="framework-rail" aria-hidden="true"><span /></div>
+          <div className="framework-rail" aria-hidden="true"><span /><i /><b /></div>
           <ol className="framework-steps grid gap-8 lg:grid-cols-3 lg:gap-10">
             {stages.map((s) => (
               <li key={s.n} className="framework-step relative flex flex-col rounded-md border bg-background card-pad transition-colors duration-300 hover:bg-elevated">
@@ -319,7 +319,7 @@ function Analysis() {
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
+          <figure className="analysis-frame edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
             <MarketChart
               stage={4}
               numbered
@@ -398,7 +398,7 @@ function Community() {
         </p>
 
         <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
-        <ul className="mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
+        <ul className="community-flow mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
             <li key={c.n} className="bg-background card-pad transition-colors hover:bg-elevated">
               <span className="font-mono text-xs text-primary">{c.n}</span>
@@ -408,7 +408,7 @@ function Community() {
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-col items-start gap-3">
+        <div className="community-next mt-8 flex flex-col items-start gap-3">
           <JoinCta />
           <p className="text-sm text-plum">Continue on Telegram.</p>
         </div>
