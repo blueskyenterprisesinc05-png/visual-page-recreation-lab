@@ -6,12 +6,39 @@ import { Testimonials } from "@/components/wb/Testimonials";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wolf Billion — Liquidity & Market Structure Education" },
-      { name: "description", content: "Clarity over noise. Process over predictions. Study liquidity and market structure with the Wolf Billion trading education community." },
-      { property: "og:title", content: "Wolf Billion — Trading Education Community" },
-      { property: "og:description", content: "Study how liquidity and market structure fit together. Join our trading education community on Telegram." },
+      { title: "Wolf Billion | Liquidity & Market Structure Education" },
+      { name: "description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
+      { property: "og:title", content: "Wolf Billion | Liquidity & Market Structure Education" },
+      { property: "og:description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Wolf Billion" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Wolf Billion | Liquidity & Market Structure Education" },
+      { name: "twitter:description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Wolf Billion",
+              description:
+                "A trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price.",
+              sameAs: ["https://t.me/+K4fPSalRPnsxNTU0"],
+            },
+            {
+              "@type": "WebPage",
+              name: "Wolf Billion | Liquidity & Market Structure Education",
+              description:
+                "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community.",
+              isPartOf: { "@type": "WebSite", name: "Wolf Billion" },
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -187,15 +214,15 @@ function ProblemGlyph({ i }: { i: number }) {
 const stages = [
   {
     n: "01", t: "Liquidity", stage: 1 as const,
-    d: "Price approaches a previous high or low — an area the framework examines for possible liquidity. These reference levels are where many orders tend to rest, so we mark them before anything else.",
+    d: "Study previous highs and lows as possible liquidity reference areas — the levels the framework examines before anything else.",
   },
   {
     n: "02", t: "Structure", stage: 2 as const,
-    d: "Price moves beyond the relevant level and subsequently changes structure. A Break of Structure (BOS) is read as a shift in context — and the participation it can induce — not as a guarantee of direction.",
+    d: "Examine breaks of previous highs and lows through our Break of Structure framework, including how such movements may induce market participation.",
   },
   {
-    n: "03", t: "Reaction & Liquidity Blocks", stage: 3 as const,
-    d: "We study the resulting reaction and the liquidity block it originated from. That zone gives analytical context and a reference for where the interpretation would be invalidated.",
+    n: "03", t: "Liquidity Blocks & Reaction", stage: 3 as const,
+    d: "Study relevant liquidity blocks, price reactions, and the areas used to reason about invalidation and risk.",
   },
 ];
 
