@@ -30,7 +30,7 @@ export function JoinCta({ size = "lg", className }: Props) {
       className={cn(
         base,
         sizes[size],
-        "group bg-primary text-primary-foreground hover:bg-foreground",
+        "group bg-primary text-primary-foreground shadow-glow transition-shadow hover:bg-foreground hover:shadow-glow-strong",
         className,
       )}
     >
