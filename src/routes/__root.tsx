@@ -79,7 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Wolf Billion" },
+      { title: "Wolf Billion | Free Trading Education" },
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
+      { rel: "canonical", href: "https://visual-page-recreation-lab.lovable.app/" },
       {
         name: "description",
         content:

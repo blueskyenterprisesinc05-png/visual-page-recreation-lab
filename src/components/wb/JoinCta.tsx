@@ -34,12 +34,7 @@ export function JoinCta({ size = "lg", className }: Props) {
       href={TELEGRAM_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(
-        base,
-        sizes[size],
-        "group",
-        className,
-      )}
+      className={cn(base, sizes[size], "group", className)}
     >
       Join the Community
       <span className="sr-only">(opens Telegram in a new tab)</span>

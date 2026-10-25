@@ -5,26 +5,27 @@ import { JoinCta } from "@/components/wb/JoinCta";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wolf Billion" },
+      { title: "Wolf Billion | Free Trading Education" },
       {
         name: "description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
-      { property: "og:title", content: "Wolf Billion | Understand the Market Beyond Setups" },
+      { property: "og:title", content: "Wolf Billion | Free Trading Education" },
       {
         property: "og:description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wolf Billion" },
+      { property: "og:url", content: "https://visual-page-recreation-lab.lovable.app/" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Wolf Billion | Understand the Market Beyond Setups" },
+      { name: "twitter:title", content: "Wolf Billion | Free Trading Education" },
       {
         name: "twitter:description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
     ],
     scripts: [
@@ -37,15 +38,15 @@ export const Route = createFileRoute("/")({
               "@type": "Organization",
               name: "Wolf Billion",
               description:
-                "A trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price.",
-              sameAs: ["https://t.me/+K4fPSalRPnsxNTU0"],
+                "Free trading education focused on understanding price movement and market behavior.",
+              url: "https://visual-page-recreation-lab.lovable.app/",
             },
             {
-              "@type": "WebPage",
-              name: "Wolf Billion | Understand the Market Beyond Setups",
+              "@type": "WebSite",
+              name: "Wolf Billion",
               description:
-                "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community.",
-              isPartOf: { "@type": "WebSite", name: "Wolf Billion" },
+                "Free trading education focused on understanding price movement and market behavior.",
+              url: "https://visual-page-recreation-lab.lovable.app/",
             },
           ],
         }),
