@@ -102,12 +102,12 @@ function Index() {
 function Nav() {
   return (
     <header
-      className="hero-focus-rest site-header relative z-40 border-b"
+      className="hero-focus-rest site-header relative z-40"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <div className={`${wrap} flex items-center justify-between gap-3`}>
-        <a href="#top" className="whitespace-nowrap text-[0.95rem] font-semibold tracking-tight">
-          Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
+        <a href="#top" className="brand-mark whitespace-nowrap">
+          <span>Wolf </span><span className="font-display-italic">Billion</span>
         </a>
         <JoinCta
           size="sm"
@@ -121,19 +121,17 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="hero relative overflow-hidden">
-      <div className={`${wrap} relative pb-[4.5rem] pt-10 md:pt-16 lg:pb-32 lg:pt-24`}>
+      <div className={`${wrap} relative hero-inner`}>
         <div className="hero-copy fade-up">
-          <h1 className="hero-title hero-focus-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
+          <h1 className="hero-title hero-focus-title hero-headline">
             <span>What if you’ve been making trading </span>
-            <span className="relative z-10 block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
-              {"\u00a0"}harder than it <span className="whitespace-nowrap">needs to be?</span>
-            </span>
+            <span className="hero-headline-italic font-display-italic text-primary">harder than it needs to be?</span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             You’ve been focusing on learning strategies instead of understanding what’s actually
             happening on the chart.
           </p>
-          <div className="hero-focus-rest hero-next mt-7 flex flex-col items-start gap-3">
+          <div className="hero-focus-rest hero-next flex flex-col items-start">
             <p className="text-sm text-plum">Free trading education video lessons on Telegram.</p>
             <JoinCta />
           </div>
