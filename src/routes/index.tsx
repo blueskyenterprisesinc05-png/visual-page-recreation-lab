@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import { JoinCta } from "@/components/wb/JoinCta";
-import { MarketChart } from "@/components/wb/MarketChart";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -104,7 +103,7 @@ function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div className="hero-focus-rest tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
       <div className="hero-focus-rest ambient -top-40 left-1/2 h-[26rem] w-[46rem] max-w-none -translate-x-1/3 opacity-70" aria-hidden />
-      <div className={`${wrap} relative grid items-center gap-12 pb-[4.5rem] pt-10 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-32 lg:pt-24`}>
+      <div className={`${wrap} relative pb-[4.5rem] pt-10 md:pt-16 lg:pb-32 lg:pt-24`}>
         <div className="hero-copy fade-up">
           <h1 className="hero-title hero-focus-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             <span>What if you've been making trading{" "}</span>
@@ -121,28 +120,6 @@ function Hero() {
           </div>
         </div>
 
-        <figure className="hero-focus-rest fade-up -mx-2 rounded-md border bg-card p-3 sm:mx-0 sm:p-6" style={{ animationDelay: ".15s" }}>
-          <div className="mb-2 flex items-center justify-between px-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted-foreground">
-            <span>Educational illustration</span>
-            <span className="text-plum">fig. 01</span>
-          </div>
-          <MarketChart
-            stage={3}
-            className="w-full sm:hidden"
-            compact
-            title="Liquidity and market structure illustration"
-            desc="Price rises to a previous high, sweeps above it, then breaks below the prior swing low (break of structure), returns to the liquidity block and reacts lower."
-          />
-          <MarketChart
-            stage={3}
-            className="hidden w-full sm:block"
-            title="Liquidity and market structure illustration"
-            desc="Price rises to a previous high, sweeps above it, then breaks below the prior swing low (break of structure), returns to the liquidity block and reacts lower."
-          />
-          <figcaption className="mt-3 border-t px-1 pt-3 text-sm text-muted-foreground">
-            An illustrative view of how liquidity and market structure can be studied together.
-          </figcaption>
-        </figure>
       </div>
     </section>
   );

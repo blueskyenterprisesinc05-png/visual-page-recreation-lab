@@ -185,7 +185,6 @@
 .hero-copy > p { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .12s both; }
 .hero-copy > div { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both; }
 @keyframes accentIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: .9; transform: none; } }
-.hero-copy + figure { animation: figureIn 900ms cubic-bezier(.2,.7,.2,1) .18s both; }
 .framework-sequence { position: relative; }
 .framework-steps .framework-step { opacity: .62; transform: translateY(8px); }
 .reveal-visible .framework-step { animation: stageIn 650ms cubic-bezier(.2,.7,.2,1) forwards; }
