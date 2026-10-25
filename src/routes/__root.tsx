@@ -9,7 +9,6 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -82,7 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Wolf Billion" },
       {
         name: "description",
-        content: "Trading education focused on liquidity and market structure.",
+        content:
+          "Wolf Billion helps traders study price movement and understand the market beyond memorized setups.",
       },
       { name: "theme-color", content: "#17161B" },
     ],
@@ -115,7 +115,6 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
-        <SpeedInsights />
       </body>
     </html>
   );
