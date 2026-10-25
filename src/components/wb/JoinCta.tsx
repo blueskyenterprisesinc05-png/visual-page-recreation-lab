@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { TELEGRAM_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -39,7 +38,6 @@ export function JoinCta({ size = "lg", className }: Props) {
       )}
     >
       Join the Community
-      <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
       <span className="sr-only">(opens Telegram in a new tab)</span>
     </a>
   );
