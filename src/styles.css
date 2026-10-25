@@ -368,7 +368,7 @@ section:has(.community-flow):hover > svg { filter: blur(0); opacity: .4; }
   animation: heroFocusRest 3.5s cubic-bezier(.22,.72,.18,1) both;
 }
 @keyframes heroFocusRest {
-  0%, 65% { filter: blur(3px); }
+  0%, 65% { filter: blur(5px); }
   100% { filter: blur(0); }
 }
 .hero-focus-title,
