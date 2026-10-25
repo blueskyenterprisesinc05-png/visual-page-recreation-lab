@@ -129,17 +129,14 @@
   border: 1px solid rgba(178, 154, 215, 0.3);
   background: transparent;
   color: #f0eaf3;
+  font-size: 12px;
+  font-weight: 500;
 }
 .site-header .cinematic-cta:hover {
   background: #38213f;
 }
 .site-header .cinematic-cta:active {
   background: #493052;
-}
-.site-header .cinematic-cta {
-  border: 1px solid rgba(178, 154, 215, 0.3);
-  background: transparent;
-  color: #f0eaf3;
 }
 .site-header .cinematic-cta:hover {
   background: #38213f;
@@ -161,6 +158,7 @@
 .hero-headline {
   max-width: none;
   margin-inline: auto;
+  color: #f0eaf3;
   font-family: var(--font-sans);
   font-size: 42px;
   font-weight: 400;
@@ -168,10 +166,22 @@
   letter-spacing: -1.3px;
 }
 .hero-headline-italic {
+  color: #b29ad7;
   font-family: var(--font-serif);
+  font-size: inherit;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -1.3px;
+  letter-spacing: inherit;
+}
+.problem-heading,
+.community-heading {
+  color: #f0eaf3;
+  font-weight: 400;
+}
+.problem-heading .font-display-italic,
+.community-heading .font-display-italic {
+  color: #b29ad7;
+  font-weight: 400;
 }
 .hero-copy > p,
 .hero-copy > div {
@@ -180,6 +190,26 @@
 }
 .hero-copy > p {
   margin-top: 28px;
+  color: #b9b0c2;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.problem-section p,
+.community-section p {
+  color: #b9b0c2;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.hero-next p {
+  color: #b9b0c2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 1;
 }
 .hero-next {
   gap: 16px;
@@ -255,6 +285,16 @@
 }
 .footer-disclosure {
   max-width: none;
+  color: #b9b0c2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.footer-identity .text-plum {
+  color: #b9b0c2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 .cinematic-cta {
   border: 0;
@@ -345,6 +385,9 @@
     align-items: center;
     justify-content: space-between;
   }
+  .footer-identity .text-plum {
+    text-align: right;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -363,8 +406,21 @@
     line-height: 1.08;
     letter-spacing: -3px;
   }
+  .site-header .cinematic-cta {
+    font-size: 13px;
+  }
   .hero-copy > p {
     font-size: 18px;
+  }
+  .hero-next p {
+    font-size: 12px;
+  }
+  .problem-section p,
+  .community-section p {
+    font-size: 18px;
+  }
+  .footer-disclosure {
+    font-size: 12px;
   }
   .problem-section .container-page {
     padding-block: 64px 64px;

@@ -107,12 +107,10 @@ function Nav() {
     >
       <div className={`${wrap} flex items-center justify-between gap-3`}>
         <a href="#top" className="brand-mark whitespace-nowrap">
-          <span>Wolf </span><span className="font-display-italic">Billion</span>
+          <span>Wolf </span>
+          <span className="font-display-italic">Billion</span>
         </a>
-        <JoinCta
-          size="sm"
-          className="shrink-0"
-        />
+        <JoinCta size="sm" className="shrink-0" />
       </div>
     </header>
   );
@@ -125,7 +123,9 @@ function Hero() {
         <div className="hero-copy fade-up">
           <h1 className="hero-title hero-focus-title hero-headline">
             <span>What if you’ve been making trading </span>
-            <span className="hero-headline-italic font-display-italic text-primary">harder than it needs to be?</span>
+            <span className="hero-headline-italic font-display-italic text-primary">
+              harder than it needs to be?
+            </span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             You’ve been focusing on learning strategies instead of understanding what’s actually
@@ -182,7 +182,7 @@ function Community() {
 
         <div className="community-next mt-8 flex flex-col items-start gap-3">
           <JoinCta />
-          <p className="text-sm text-plum">Free access · Opens Telegram</p>
+          <p className="text-plum">Free access · Opens Telegram</p>
         </div>
       </Reveal>
     </section>
