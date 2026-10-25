@@ -153,16 +153,10 @@ function Hero() {
   );
 }
 
-const problems = [
-  { n: "01", t: "Learning strategies", d: "You keep collecting tutorials and methods to study.", tag: "More to learn" },
-  { n: "02", t: "Trying different setups", d: "You test different approaches, hoping one will make the chart easier to read.", tag: "Still searching" },
-  { n: "03", t: "Still struggling to interpret the chart", d: "Even after learning the setups, the market behavior behind them remains difficult to read.", tag: "Need for understanding" },
-];
-
 function Problem() {
   return (
     <section className="border-t section-y">
-      <Reveal className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
+      <Reveal className={`${wrap} max-w-3xl`}>
         <div>
           <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
             You&apos;ve learned the strategies. <span className="font-display-italic text-primary">But do you understand the market?</span>
@@ -174,68 +168,8 @@ function Problem() {
             Learning another strategy won&apos;t necessarily change that. Understanding the market behavior behind those setups is a different kind of learning.
           </p>
         </div>
-
-        <ol className="relative">
-          <span className="absolute bottom-6 left-[1.05rem] top-6 w-px bg-gradient-to-b from-plum via-border to-primary" aria-hidden />
-          {problems.map((p, i) => (
-            <li key={p.n} className="problem-fragment relative flex gap-5 pb-10 last:pb-0">
-              <span className={`relative z-10 grid size-9 shrink-0 place-items-center rounded-full border font-mono text-xs ${i === 2 ? "border-primary bg-primary text-primary-foreground" : "bg-background text-muted-foreground"}`}>
-                {p.n}
-              </span>
-              <div className="flex-1 border-b pb-8">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-lg font-medium">{p.t}</h3>
-                  <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">→ {p.tag}</span>
-                </div>
-                <p className="mt-2 text-muted-foreground">{p.d}</p>
-                <ProblemGlyph i={i} />
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <p className="max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:hidden">
-          Instead of memorizing another setup, start understanding the market behavior behind the setups you&apos;re learning.
-        </p>
       </Reveal>
-
-      <div className={`${wrap} problem-next mt-16 flex flex-col items-center lg:mt-24 text-center`}>
-        <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
-        <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-          Instead of memorizing another setup, <span className="text-foreground">start understanding the market behavior behind the setups you&apos;re learning.</span>
-        </p>
-      </div>
     </section>
-  );
-}
-
-function ProblemGlyph({ i }: { i: number }) {
-  const common = "mt-4 h-8 w-full max-w-[220px]";
-  if (i === 0)
-    return (
-      <svg viewBox="0 0 220 32" className={common} aria-hidden>
-        {[0, 1, 2, 3].map((k) => (
-          <path key={k} d={`M0 ${16 + k * 2} Q 55 ${k * 8} 110 ${16 - k} T 220 ${10 + k * 4}`} fill="none" className="stroke-plum" strokeWidth="1" opacity={0.5 + k * 0.12} />
-        ))}
-      </svg>
-    );
-  if (i === 1)
-    return (
-      <svg viewBox="0 0 220 32" className={common} aria-hidden>
-        <path d="M0 26 L60 22 L90 6 L120 24 L220 20" fill="none" className="stroke-muted-foreground" strokeWidth="1.2" />
-        <circle cx="150" cy="22" r="3" className="fill-plum" />
-        <text x="140" y="14" fontSize="9" className="fill-plum font-mono">noticed here</text>
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 220 32" className={common} aria-hidden>
-      {[20, 90, 160].map((x, k) => (
-        <g key={x}>
-          <rect x={x} y="10" width="40" height="12" rx="2" fill="none" className="stroke-primary" strokeWidth="1" />
-          {k < 2 && <line x1={x + 40} x2={x + 70} y1="16" y2="16" className="stroke-primary" strokeWidth="1" strokeDasharray="2 3" />}
-        </g>
-      ))}
-    </svg>
   );
 }
 
