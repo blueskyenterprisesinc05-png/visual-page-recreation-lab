@@ -1,12 +1,11 @@
-import { ArrowUpRight } from "lucide-react";
 import { TELEGRAM_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 type Props = { size?: "sm" | "lg"; className?: string };
 
 const base =
-  "cinematic-cta inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-colors";
-const sizes = { sm: "h-10 px-4 text-sm", lg: "h-12 px-6 text-[0.95rem]" };
+  "cinematic-cta inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors";
+const sizes = { sm: "px-5 py-3 text-[0.8125rem]", lg: "px-7 py-4 text-sm" };
 
 export function JoinCta({ size = "lg", className }: Props) {
   if (!TELEGRAM_URL) {
@@ -22,7 +21,11 @@ export function JoinCta({ size = "lg", className }: Props) {
         >
           Join the Community
         </span>
-        {size === "lg" && <span role="status" className="text-xs text-muted-foreground">Telegram community link coming soon.</span>}
+        {size === "lg" && (
+          <span role="status" className="text-xs text-muted-foreground">
+            Telegram community link coming soon.
+          </span>
+        )}
       </span>
     );
   }
@@ -34,12 +37,11 @@ export function JoinCta({ size = "lg", className }: Props) {
       className={cn(
         base,
         sizes[size],
-        "group bg-primary text-primary-foreground hover:bg-foreground",
+        "group bg-primary text-primary-foreground hover:bg-primary/90",
         className,
       )}
     >
       Join the Community
-      <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
       <span className="sr-only">(opens Telegram in a new tab)</span>
     </a>
   );
