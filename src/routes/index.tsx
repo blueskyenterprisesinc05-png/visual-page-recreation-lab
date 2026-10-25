@@ -118,7 +118,7 @@ function Hero() {
             </span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Learn to read price through liquidity and market structure, not just predictions.
+            Most traders are looking for the next move. We&apos;re more interested in understanding what&apos;s happening on the chart.
           </p>
           <div className="hero-focus-rest hero-next mt-7 flex flex-col items-start gap-3">
             <JoinCta />
@@ -154,9 +154,9 @@ function Hero() {
 }
 
 const problems = [
-  { n: "01", t: "Too much input", d: "Competing interpretations and indicators create confusion.", tag: "Overload" },
-  { n: "02", t: "Late interpretation", d: "The trader only recognizes the context after price has reacted.", tag: "Hesitation" },
-  { n: "03", t: "No consistent sequence", d: "Without a framework, interpretations change from one market situation to another.", tag: "Need for structure" },
+  { n: "01", t: "Learning strategies", d: "You keep collecting tutorials and methods to study.", tag: "More to learn" },
+  { n: "02", t: "Trying different setups", d: "You test different approaches, hoping one will make the chart easier to read.", tag: "Still searching" },
+  { n: "03", t: "Still struggling to interpret the chart", d: "Even after learning the setups, the market behavior behind them remains difficult to read.", tag: "Need for understanding" },
 ];
 
 function Problem() {
@@ -164,12 +164,15 @@ function Problem() {
     <section className="border-t section-y">
       <Reveal className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
         <div>
-          <p className="eyebrow">The problem is not a lack of signals</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-            More information <span className="text-spotlight font-display-italic text-primary">does not create</span> more clarity.
+<p className="eyebrow">The problem</p>
+          <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
+            You&apos;ve learned the strategies. <span className="text-spotlight font-display-italic text-primary">But do you understand the market?</span>
           </h2>
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-            Charts are crowded with opinions, indicators, and after-the-fact explanations. Without a repeatable process, every move becomes another reason to hesitate, chase, or change the plan.
+            You&apos;ve watched the tutorials, studied different setups, and maybe even tried a few strategies yourself. Yet somehow, the chart still leaves you second-guessing what to do.
+          </p>
+          <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
+            Maybe the answer isn&apos;t another strategy. Maybe it&apos;s understanding the market behavior those strategies are built around.
           </p>
           <p className="mt-10 hidden max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:block">
             The goal is not to predict every move. It is to study what price is doing with more consistency.
@@ -196,14 +199,14 @@ function Problem() {
         </ol>
 
         <p className="max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:hidden">
-          The goal is not to predict every move. It is to study what price is doing with more consistency.
+          Instead of memorizing another setup, start understanding the market behavior behind the setups you&apos;re learning.
         </p>
       </Reveal>
 
       <div className={`${wrap} problem-next mt-16 flex flex-col items-center lg:mt-24 text-center`}>
         <span className="h-14 w-px bg-gradient-to-b from-transparent to-primary" aria-hidden />
         <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-          Clarity does not come from adding another signal. <span className="text-foreground">It comes from giving the chart a sequence.</span>
+          Instead of memorizing another setup, <span className="text-foreground">start understanding the market behavior behind the setups you&apos;re learning.</span>
         </p>
       </div>
     </section>
