@@ -146,7 +146,7 @@ function Problem() {
     <section className="problem-section section-y">
       <Reveal className={`${wrap} max-w-3xl`}>
         <div>
-          <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
+          <h2 className="problem-heading text-3xl font-normal leading-[1.1] tracking-[-0.03em]">
             You’ve learned the strategies.{" "}
             <span className="font-display-italic text-primary">
               But&nbsp;do you understand the market?
@@ -171,8 +171,8 @@ function Community() {
   return (
     <section className="community-section relative overflow-hidden section-y">
       <Reveal className={`${wrap} relative`}>
-        <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-          Let&apos;s look at the market{" "}
+        <h2 className="community-heading max-w-2xl text-3xl font-normal leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+          Let’s look at the market{" "}
           <span className="font-display-italic text-primary">from a different angle.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">

@@ -24,10 +24,10 @@
   --foreground: #f0eaf3;
   --card: #17161b;
   --card-foreground: #f0eaf3;
-  --primary: #b29ad7;
+  --primary: #d7c3fa;
   --primary-foreground: #12021a;
   --muted-foreground: #b9b0c2;
-  --plum: #6d6774;
+  --plum: #b9b0c2;
   --border: rgba(178, 154, 215, 0.3);
 }
 
@@ -198,11 +198,19 @@
 .site-footer {
   background: #17161b;
 }
+.problem-section .container-page,
+.community-section .container-page {
+  padding-inline: 24px;
+}
 .problem-section .container-page {
   max-width: 984px;
 }
 .problem-section .container-page > div {
   max-width: 800px;
+}
+.problem-section h2,
+.community-section h2 {
+  font-weight: 400;
 }
 .problem-section h2 {
   max-width: 800px;
@@ -261,7 +269,7 @@
   background: #a48bcb;
 }
 .reveal {
-  opacity: 0.85;
+  opacity: 1;
   transform: translateY(5px);
   transition:
     opacity 450ms cubic-bezier(0.2, 0.65, 0.3, 1),
@@ -344,7 +352,7 @@
     padding-inline: 64px;
   }
   .site-header .container-page {
-    padding-block: 32px;
+    padding: 32px 64px;
   }
   .hero .container-page {
     padding-block: 96px 80px;
