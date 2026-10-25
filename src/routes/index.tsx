@@ -6,10 +6,10 @@ import { MarketChart } from "@/components/wb/MarketChart";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wolf Billion | Liquidity & Market Structure Education" },
-      { name: "description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
-      { property: "og:title", content: "Wolf Billion | Liquidity & Market Structure Education" },
-      { property: "og:description", content: "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community." },
+      { title: "Wolf Billion | Understand the Market Beyond Setups" },
+      { name: "description", content: "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion." },
+      { property: "og:title", content: "Wolf Billion | Understand the Market Beyond Setups" },
+      { property: "og:description", content: "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wolf Billion" },
       { name: "twitter:card", content: "summary" },
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
             },
             {
               "@type": "WebPage",
-              name: "Wolf Billion | Liquidity & Market Structure Education",
+              name: "Wolf Billion | Understand the Market Beyond Setups",
               description:
                 "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community.",
               isPartOf: { "@type": "WebSite", name: "Wolf Billion" },
@@ -79,7 +79,6 @@ function Index() {
       <main>
         <Hero />
         <Problem />
-        <Framework />
         <Behind />
         <Community />
         <FinalCta />
@@ -171,59 +170,6 @@ function Problem() {
   );
 }
 
-const stages = [
-  {
-    n: "01", t: "Liquidity", stage: 1 as const,
-    d: "Study previous highs and lows as possible liquidity reference areas, including where highs respect previous highs and lows respect previous lows.",
-  },
-  {
-    n: "02", t: "Structure", stage: 2 as const,
-    d: "Examine breaks of previous highs and lows through our Break of Structure framework, including how those movements may induce market participation.",
-  },
-  {
-    n: "03", t: "Liquidity Blocks & Reaction", stage: 3 as const,
-    d: "Study relevant liquidity blocks, price reactions, and how these areas are considered when reasoning about invalidation and risk.",
-  },
-];
-
-function Framework() {
-  return (
-    <section className="relative overflow-hidden border-t bg-card section-y story-section">
-      <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
-      <Reveal className={wrap}>
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-            Start with understanding <span className="font-display-italic text-primary">how price behaves.</span>
-          </h2>
-          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
-            We study price through three connected ideas: liquidity, market structure, and reaction.
-          </p>
-        </div>
-
-        <div className="framework-sequence mt-12 lg:mt-16" aria-label="Three-stage Wolf Billion framework">
-          <div className="framework-rail" aria-hidden="true"><span /><i /><b /></div>
-          <ol className="framework-steps grid gap-8 lg:grid-cols-3 lg:gap-10">
-            {stages.map((s) => (
-              <li key={s.n} className="framework-step relative flex flex-col rounded-md border bg-background card-pad transition-colors duration-300 hover:bg-elevated">
-                <div className="flex items-center gap-3 font-mono text-xs text-primary">
-                  <span className="framework-number grid size-8 place-items-center rounded-full border border-primary/60 bg-card">{s.n}</span>
-                  <span className="h-px flex-1 bg-border" />
-                  <span className="text-plum">stage {s.stage}/3</span>
-                </div>
-                <h3 className="mt-5 text-xl font-medium">{s.t}</h3>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{s.d}</p>
-                <div className="framework-signal mt-6" aria-hidden="true"><span /><i /><b /></div>
-                <span className="framework-focus" aria-hidden="true" />
-              </li>
-            ))}
-          </ol>
-        </div>
-        <p className="mt-10 text-sm leading-relaxed text-plum">This is a conceptual overview of our approach, not a fixed rule for every market movement.</p>
-      </Reveal>
-    </section>
-  );
-}
-
 function Behind() {
   return (
     <section className="border-t section-y">
@@ -243,9 +189,9 @@ function Behind() {
 }
 
 const community = [
-  { n: "01", t: "Market Breakdowns", d: "Learn how liquidity and market structure can be examined through educational chart breakdowns." },
-  { n: "02", t: "Trading Discussions", d: "Explore trading ideas, chart interpretations, and different analytical perspectives." },
-  { n: "03", t: "Structured Learning", d: "Develop a more consistent understanding of liquidity, Break of Structure, and Liquidity Blocks." },
+  { n: "01", t: "Read the chart", d: "Explore what may be happening on a chart instead of relying only on a memorized setup." },
+  { n: "02", t: "Compare interpretations", d: "Discuss chart readings and the context behind different ways of looking at price." },
+  { n: "03", t: "Study with more context", d: "Develop a more thoughtful way to interpret market behavior, including liquidity and structure." },
 ];
 
 function Community() {
@@ -268,10 +214,10 @@ function Community() {
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join our Telegram community to explore trading concepts, study market structure, and take part in discussions focused on understanding price.
+          Join our Telegram community to explore how price behaves, discuss chart interpretations, and develop a deeper understanding of market behavior.
         </p>
 
-        <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">What we're building inside — planned focus areas</p>
+        <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">Why join the conversation</p>
         <ul className="community-flow mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
             <li key={c.n} className="community-card bg-background card-pad transition-colors hover:bg-elevated">
@@ -301,7 +247,7 @@ function FinalCta() {
           Ready to see the market from <span className="font-display-italic text-[1.1em] text-primary">another perspective?</span>
         </h2>
         <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-          Explore liquidity, understand market structure, and connect with a community focused on disciplined learning.
+          Look beyond memorized setups, study market behavior with more context, and keep developing your way of reading price.
         </p>
         <JoinCta className="mt-10" />
       </Reveal>
