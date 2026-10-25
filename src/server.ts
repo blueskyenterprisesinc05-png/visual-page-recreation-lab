@@ -44,8 +44,37 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+const CANONICAL_ORIGIN = "https://wolfbillion.com";
+const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>${CANONICAL_ORIGIN}/</loc></url>
+</urlset>`;
+const ROBOTS_TXT = `User-agent: *
+Allow: /
+
+Sitemap: ${CANONICAL_ORIGIN}/sitemap.xml
+`;
+
+function seoResponse(pathname: string): Response | undefined {
+  if (pathname === "/sitemap.xml") {
+    return new Response(SITEMAP_XML, {
+      headers: { "content-type": "application/xml; charset=utf-8", "cache-control": "public, max-age=3600" },
+    });
+  }
+  if (pathname === "/robots.txt") {
+    return new Response(ROBOTS_TXT, {
+      headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" },
+    });
+  }
+  return undefined;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const url = new URL(request.url);
+    const seo = seoResponse(url.pathname);
+    if (seo) return seo;
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
