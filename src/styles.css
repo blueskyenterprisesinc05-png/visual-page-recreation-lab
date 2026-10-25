@@ -336,16 +336,10 @@
 @keyframes heroDepth { from { opacity: 0; transform: translateX(-16px) scale(.9); } to { opacity: .55; transform: none; } }
 
 /* Problem fragments arrive from different depths; only their nonessential glyphs soften. */
-  .problem-fragment .mt-4 { filter: blur(2px); opacity: .52; transition: filter 500ms ease, opacity 500ms ease; }
-  .reveal-visible .problem-fragment .mt-4 { animation: problemGlyphFocus 4s cubic-bezier(.2,.7,.2,1) forwards; }
-  .problem-fragment:hover .mt-4,
-  .problem-fragment:focus-within .mt-4 { filter: blur(0); opacity: 1; }
-  .problem-fragment:nth-child(3) .mt-4 { filter: blur(0); opacity: .9; }
-  @keyframes problemGlyphFocus {
-    from { filter: blur(2px); opacity: .52; }
-    to { filter: blur(0); opacity: 1; }
-  }
-
+.problem-fragment .mt-4 { filter: blur(2px); opacity: .52; transition: filter 500ms ease, opacity 500ms ease; }
+.problem-fragment:hover .mt-4,
+.problem-fragment:focus-within .mt-4 { filter: blur(0); opacity: 1; }
+.problem-fragment:nth-child(3) .mt-4 { filter: blur(0); opacity: .9; }
 
 /* Framework focus travels through the small signals, never the educational copy. */
 .framework-step .framework-signal,
