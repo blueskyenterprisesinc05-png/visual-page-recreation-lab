@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://visual-page-recreation-lab.lovable.app/sitemap.xml
+Sitemap: https://wolfbillion.com/sitemap.xml

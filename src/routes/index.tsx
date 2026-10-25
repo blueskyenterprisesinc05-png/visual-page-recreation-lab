@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wolf Billion" },
-      { property: "og:url", content: "https://visual-page-recreation-lab.lovable.app/" },
+      { property: "og:url", content: "https://wolfbillion.com/" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Wolf Billion | Free Trading Education" },
       {
@@ -39,14 +39,14 @@ export const Route = createFileRoute("/")({
               name: "Wolf Billion",
               description:
                 "Free trading education focused on understanding price movement and market behavior.",
-              url: "https://visual-page-recreation-lab.lovable.app/",
+              url: "https://wolfbillion.com/",
             },
             {
               "@type": "WebSite",
               name: "Wolf Billion",
               description:
                 "Free trading education focused on understanding price movement and market behavior.",
-              url: "https://visual-page-recreation-lab.lovable.app/",
+              url: "https://wolfbillion.com/",
             },
           ],
         }),
