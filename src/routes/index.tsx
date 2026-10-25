@@ -108,7 +108,7 @@ function Hero() {
           <h1 className="hero-title hero-focus-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             <span>What if you've been making trading{" "}</span>
             <span className="relative z-10 block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
-              harder than it <span className="whitespace-nowrap">needs to be?</span>
+              {"\u00a0"}harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -153,7 +153,7 @@ function Community() {
           Let&apos;s look at the market <span className="font-display-italic text-primary">from a different angle.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join Wolf Billion on Telegram, where we explore price behavior and share ideas about how to interpret the market.
+          Join Wolf Billion on Telegram to explore a different way of studying the market and build a deeper understanding of price movement.
         </p>
 
         <div className="community-next mt-8 flex flex-col items-start gap-3">
