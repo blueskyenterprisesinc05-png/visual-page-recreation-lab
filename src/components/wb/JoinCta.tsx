@@ -22,7 +22,11 @@ export function JoinCta({ size = "lg", className }: Props) {
         >
           Join the Community
         </span>
-        {size === "lg" && <span role="status" className="text-xs text-muted-foreground">Telegram community link coming soon.</span>}
+        {size === "lg" && (
+          <span role="status" className="text-xs text-muted-foreground">
+            Telegram community link coming soon.
+          </span>
+        )}
       </span>
     );
   }
@@ -39,7 +43,10 @@ export function JoinCta({ size = "lg", className }: Props) {
       )}
     >
       Join the Community
-      <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
+      <ArrowUpRight
+        className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        aria-hidden
+      />
       <span className="sr-only">(opens Telegram in a new tab)</span>
     </a>
   );
