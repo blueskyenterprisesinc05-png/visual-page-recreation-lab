@@ -71,7 +71,39 @@
   }
   :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: 2px; }
   ::selection { background: var(--color-primary); color: var(--color-primary-foreground); }
-}
+  }
+
+  .site-header {
+  border-color: color-mix(in oklab, var(--color-border) 72%, transparent);
+  background-color: color-mix(in oklab, var(--color-background) 74%, transparent);
+  }
+  .hero {
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 15%, rgba(79, 39, 91, .42) 0%, rgba(56, 33, 63, .28) 38%, rgba(23, 22, 27, 0) 78%),
+    var(--color-background);
+  }
+  .hero::after,
+  .community-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 62%, color-mix(in oklab, var(--color-background) 78%, transparent));
+  }
+  .hero > *, .community-section > * { position: relative; z-index: 1; }
+  .problem-section {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--color-background) 96%, var(--color-plum)), var(--color-background));
+  }
+  .community-section {
+  background:
+    radial-gradient(ellipse 85% 75% at 78% 20%, rgba(79, 39, 91, .2), transparent 72%),
+    color-mix(in oklab, var(--color-background) 94%, var(--color-plum));
+  }
+  .site-footer { background: var(--color-background); }
+
+  @media (max-width: 640px) {
+    .hero { background-position: 50% 8%; background-size: 145% 72%; background-repeat: no-repeat; }
+  }
 
 @utility font-display-italic {
   font-family: var(--font-serif);
@@ -298,7 +330,7 @@
   .hero-focus-rest {
   filter: blur(2.5px);
   animation-name: heroFocusRest;
-  animation-duration: 3s;
+  animation-duration: 2.5s;
   animation-delay: 0s;
   animation-timing-function: cubic-bezier(.2,.7,.2,1);
   animation-fill-mode: forwards;
@@ -310,13 +342,13 @@
   100% { filter: blur(0); }
   }
 .hero-copy > p.hero-focus-rest {
-  animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .12s both, heroFocusRest 4s cubic-bezier(.2,.7,.2,1) 0s both;
+  animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .12s both, heroFocusRest 2.5s cubic-bezier(.2,.7,.2,1) 0s both;
 }
 .hero-copy > div.hero-focus-rest {
-  animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both, heroFocusRest 4s cubic-bezier(.2,.7,.2,1) 0s both;
+  animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both, heroFocusRest 2.5s cubic-bezier(.2,.7,.2,1) 0s both;
 }
 figure.hero-focus-rest {
-  animation: fadeUp .8s cubic-bezier(.2,.7,.2,1) .15s both, heroFocusRest 4s cubic-bezier(.2,.7,.2,1) 0s both;
+  animation: fadeUp .8s cubic-bezier(.2,.7,.2,1) .15s both, heroFocusRest 2.5s cubic-bezier(.2,.7,.2,1) 0s both;
 }
 .hero-focus-title,
 .hero-focus-title > span {

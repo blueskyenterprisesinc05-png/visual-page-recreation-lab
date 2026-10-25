@@ -87,7 +87,7 @@ function Index() {
 
 function Nav() {
   return (
-    <header className="hero-focus-rest sticky top-0 z-40 border-b bg-background/90 backdrop-blur-sm" style={{ paddingTop: "env(safe-area-inset-top)" }}>
+    <header className="hero-focus-rest site-header sticky top-0 z-40 border-b bg-background/70 backdrop-blur-sm" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className={`${wrap} flex h-[4.25rem] items-center justify-between gap-3`}>
         <a href="#top" className="whitespace-nowrap text-[0.95rem] font-semibold tracking-tight">
           Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
@@ -100,7 +100,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="hero relative overflow-hidden">
       <div className="hero-focus-rest tech-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden />
       <div className="hero-focus-rest ambient -top-40 left-1/2 h-[26rem] w-[46rem] max-w-none -translate-x-1/3 opacity-70" aria-hidden />
       <div className={`${wrap} relative pb-[4.5rem] pt-10 md:pt-16 lg:pb-32 lg:pt-24`}>
@@ -127,7 +127,7 @@ function Hero() {
 
 function Problem() {
   return (
-    <section className="border-t section-y">
+    <section className="problem-section border-t section-y">
       <Reveal className={`${wrap} max-w-3xl`}>
         <div>
           <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
@@ -147,7 +147,7 @@ function Problem() {
 
 function Community() {
   return (
-    <section className="relative overflow-hidden border-t bg-card section-y">
+    <section className="community-section relative overflow-hidden border-t section-y">
       <Reveal className={`${wrap} relative`}>
         <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           Let&apos;s look at the market <span className="font-display-italic text-primary">from a different angle.</span>
@@ -167,7 +167,7 @@ function Community() {
 
 function Footer() {
   return (
-    <footer className="border-t py-14" style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}>
+    <footer className="site-footer border-t py-14" style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}>
       <div className={`${wrap} grid gap-8 md:grid-cols-[1fr_1.4fr]`}>
         <div>
           <p className="font-semibold tracking-tight">
