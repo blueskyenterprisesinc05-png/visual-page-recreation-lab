@@ -113,7 +113,7 @@ function Hero() {
         <div className="hero-copy fade-up">
           <h1 className="hero-title hero-focus-title max-w-[20ch] text-[clamp(1.85rem,8.6vw,2.4rem)] font-semibold leading-[1.06] tracking-[-0.04em] sm:max-w-none sm:text-5xl sm:tracking-[-0.035em] lg:text-[3.7rem]">
             <span>What if you've been making trading{" "}</span>
-            <span className="hero-glow relative z-10 block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary before:absolute before:-inset-x-8 before:-inset-y-3 before:-z-10 before:rounded-full before:bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--primary)_24%,transparent),transparent)] before:blur-md sm:inline">
+            <span className="relative z-10 block text-balance font-display-italic text-[1.14em] leading-[1] tracking-[-0.015em] text-primary sm:inline">
               harder than it <span className="whitespace-nowrap">needs to be?</span>
             </span>
           </h1>
