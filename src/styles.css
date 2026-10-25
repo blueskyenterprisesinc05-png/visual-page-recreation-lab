@@ -212,8 +212,11 @@
   color: #b9b0c2;
   font-size: 13px;
   font-weight: 400;
+  font-style: normal;
   line-height: 1.5;
+  letter-spacing: 0;
   opacity: 1;
+  text-align: center;
 }
 .hero-next {
   gap: 16px;
@@ -304,13 +307,24 @@
   border: 0;
   border-radius: 6px;
   box-shadow: none;
+  background: #d7c3fa;
+  color: #12021a;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
 }
 .cinematic-cta:hover {
   transform: none;
   box-shadow: none;
+  background: #b29ad7;
+  color: #12021a;
 }
 .cinematic-cta:active {
   background: #a48bcb;
+  color: #12021a;
 }
 .reveal {
   opacity: 1;
@@ -361,6 +375,9 @@
     font-size: 60px;
     line-height: 1.08;
     letter-spacing: -2px;
+  }
+  .hero-next p {
+    font-size: 12px;
   }
   .problem-section .container-page {
     padding-block: 64px 56px;
@@ -413,11 +430,11 @@
   .site-header .cinematic-cta {
     font-size: 13px;
   }
-  .hero-copy > p {
-    font-size: 18px;
-  }
   .hero-next p {
     font-size: 12px;
+  }
+  .hero-copy > p {
+    font-size: 18px;
   }
   .problem-section p,
   .community-section p {
