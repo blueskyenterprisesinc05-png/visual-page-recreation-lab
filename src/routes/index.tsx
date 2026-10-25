@@ -200,7 +200,7 @@ function Footer() {
           <p className="font-semibold tracking-tight">
             Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
           </p>
-          <p className="text-sm text-plum">© 2026 Wolf Billion</p>
+          <p className="text-sm text-plum">�� 2026 Wolf Billion</p>
         </div>
         <p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">
           Trading involves substantial risk and potential financial loss. Content is for educational
