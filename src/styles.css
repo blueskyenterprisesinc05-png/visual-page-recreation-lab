@@ -367,7 +367,7 @@ section:has(.community-flow):hover > svg { filter: blur(0); opacity: .4; }
   .hero-focus-rest {
   filter: blur(2.5px);
   animation-name: heroFocusRest;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-delay: 0s;
   animation-timing-function: cubic-bezier(.2,.7,.2,1);
   animation-fill-mode: forwards;
