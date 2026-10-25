@@ -164,18 +164,14 @@ function Problem() {
     <section className="border-t section-y">
       <Reveal className={`${wrap} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20`}>
         <div>
-<p className="eyebrow">The problem</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
-            You&apos;ve learned the strategies. <span className="text-spotlight font-display-italic text-primary">But do you understand the market?</span>
+          <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
+            You&apos;ve learned the strategies. <span className="font-display-italic text-primary">But do you understand the market?</span>
           </h2>
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-            You&apos;ve watched the tutorials, studied different setups, and maybe even tried a few strategies yourself. Yet somehow, the chart still leaves you second-guessing what to do.
+            You&apos;ve watched the tutorials, studied different setups, and tried applying what you&apos;ve learned. But when you&apos;re on your own, looking at a chart, you&apos;re still not sure what to look for.
           </p>
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-            Maybe the answer isn&apos;t another strategy. Maybe it&apos;s understanding the market behavior those strategies are built around.
-          </p>
-          <p className="mt-10 hidden max-w-sm border-l-2 border-primary pl-4 font-display-italic text-2xl leading-snug lg:block">
-            The goal is not to predict every move. It is to study what price is doing with more consistency.
+            Learning another strategy won&apos;t necessarily change that. Understanding the market behavior behind those setups is a different kind of learning.
           </p>
         </div>
 
