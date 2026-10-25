@@ -79,7 +79,6 @@ function Index() {
       <main>
         <Hero />
         <Problem />
-        <Behind />
         <Community />
       </main>
       <Footer />
@@ -169,61 +168,16 @@ function Problem() {
   );
 }
 
-function Behind() {
-  return (
-    <section className="border-t section-y">
-      <Reveal className={`${wrap} grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-20`}>
-        <div>
-          <p className="eyebrow">Behind Wolf Billion</p>
-          <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-            Built around a <span className="font-display-italic text-primary">different way</span> of studying price.
-          </h2>
-        </div>
-        <p className="max-w-xl leading-relaxed text-muted-foreground lg:justify-self-end">
-          Wolf Billion is being developed around a liquidity-focused approach to studying price movement, market structure, and disciplined decision-making.
-        </p>
-      </Reveal>
-    </section>
-  );
-}
-
-const community = [
-  { n: "01", t: "Look beyond the setup", d: "Explore what price is doing, not just whether it matches a strategy." },
-  { n: "02", t: "See different perspectives", d: "Discuss chart interpretations and the reasoning behind them." },
-  { n: "03", t: "Understand the bigger picture", d: "Explore how liquidity and market structure can help put price movements into context." },
-];
-
 function Community() {
   return (
     <section className="relative overflow-hidden border-t bg-card section-y">
-      <svg viewBox="0 0 400 400" className="pointer-events-none absolute -right-24 top-10 w-[420px] opacity-40 lg:right-0" aria-hidden>
-        {[60, 110, 160].map((r) => <circle key={r} cx="200" cy="200" r={r} fill="none" className="stroke-border" />)}
-        {[[200, 40], [339, 280], [61, 280], [310, 90], [90, 310], [200, 360]].map(([x, y]) => (
-          <g key={`${x}${y}`}>
-            <line x1="200" y1="200" x2={x} y2={y} className="stroke-plum" strokeWidth="0.6" />
-            <circle cx={x} cy={y} r="4" className="fill-primary" />
-          </g>
-        ))}
-        <circle cx="200" cy="200" r="7" className="fill-foreground" />
-      </svg>
-
       <Reveal className={`${wrap} relative`}>
         <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-          The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
+          Let&apos;s look at the market <span className="font-display-italic text-primary">from a different angle.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join us on Telegram to look beyond trading setups, share perspectives, and explore what&apos;s really happening on the chart.
+          Join Wolf Billion on Telegram, where we explore price behavior and share ideas about how to interpret the market.
         </p>
-
-        <ul className="community-flow mt-12 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
-          {community.map((c) => (
-            <li key={c.n} className="community-card bg-background card-pad transition-colors hover:bg-elevated">
-              <span className="font-mono text-xs text-primary">{c.n}</span>
-              <h3 className="mt-4 text-lg font-medium">{c.t}</h3>
-              <p className="mt-2 text-muted-foreground">{c.d}</p>
-            </li>
-          ))}
-        </ul>
 
         <div className="community-next mt-8 flex flex-col items-start gap-3">
           <JoinCta />
