@@ -250,15 +250,11 @@
   }
 }
 
-.analysis-frame { overflow: hidden; }
-.analysis-frame .market-chart-callout { animation: calloutSettle 700ms cubic-bezier(.2,.7,.2,1) .5s both; }
-@keyframes calloutSettle { from { opacity: .35; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
 .community-flow li { position: relative; }
 .community-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -.7rem; top: 50%; z-index: 2; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border: 1px solid var(--color-primary); border-radius: 999px; background: var(--color-background); color: var(--color-primary); font: .7rem var(--font-mono); transform: translateY(-50%); }
 .community-next { position: relative; }
 .community-next::before { content: "↓"; position: absolute; left: -1.35rem; top: .85rem; color: var(--color-primary); font: .8rem var(--font-mono); }
 .story-section { isolation: isolate; }
-.story-section--quiet { background: color-mix(in oklab, var(--color-background) 92%, var(--color-card)); }
 
 /* Scene-specific motion: each chapter has its own editorial rhythm. */
 .hero-title { overflow: hidden; }
@@ -271,13 +267,6 @@
 .reveal-visible .framework-step:nth-child(2) .framework-focus { animation: focusSweep 900ms ease 620ms forwards; }
 .reveal-visible .framework-step:nth-child(3) .framework-focus { animation: focusSweep 900ms ease 1060ms forwards; }
 @keyframes focusSweep { 0% { width: 0; opacity: 0; } 20% { opacity: 1; } 100% { width: 100%; opacity: 0; } }
-
-.analysis-frame { transform-origin: 42% 38%; }
-.reveal-visible .analysis-frame { animation: documentaryPush 1200ms cubic-bezier(.2,.7,.2,1) both; }
-.analysis-frame::after { content: "ALIGN / VERIFY"; position: absolute; right: 1rem; top: 1rem; color: var(--color-primary); font: .58rem var(--font-mono); letter-spacing: .14em; opacity: 0; }
-.reveal-visible .analysis-frame::after { animation: annotationIn 500ms ease 700ms forwards; }
-@keyframes documentaryPush { from { opacity: .45; transform: scale(.975); } to { opacity: 1; transform: scale(1); } }
-@keyframes annotationIn { from { opacity: 0; transform: translateX(8px); } to { opacity: .8; transform: none; } }
 
 .community-card { animation: warmSettle 850ms cubic-bezier(.2,.7,.2,1) both; }
 .community-card:nth-child(1) { animation-delay: 60ms; }
@@ -313,12 +302,6 @@
 .framework-step .framework-signal,
 .framework-step .framework-focus { opacity: .55; }
 .framework-rail span { opacity: .8; }
-
-/* The chart stays crisp while the analysis annotation makes a short directional settle. */
-.analysis-frame::before { filter: blur(7px); opacity: .32; }
-.analysis-frame .market-chart-callout { filter: blur(2px); }
-.reveal-visible .analysis-frame .market-chart-callout { animation: calloutFocus 800ms cubic-bezier(.2,.7,.2,1) .5s both; }
-@keyframes calloutFocus { from { filter: blur(3px); opacity: .3; transform: translateX(-10px); } 55% { filter: blur(0); opacity: 1; transform: translateX(3px); } to { filter: blur(0); opacity: 1; transform: none; } }
 
 /* Community atmosphere is intentionally soft; the CTA and copy remain untouched. */
 .community-flow + * { position: relative; }

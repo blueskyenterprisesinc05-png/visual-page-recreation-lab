@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
 import { JoinCta } from "@/components/wb/JoinCta";
 import { MarketChart } from "@/components/wb/MarketChart";
-import { Testimonials } from "@/components/wb/Testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -81,7 +80,6 @@ function Index() {
         <Hero />
         <Problem />
         <Framework />
-        <Analysis />
         <Behind />
         <Community />
         <FinalCta />
@@ -221,58 +219,6 @@ function Framework() {
           </ol>
         </div>
         <p className="mt-10 text-sm leading-relaxed text-plum">This is a conceptual overview of our approach, not a fixed rule for every market movement.</p>
-      </Reveal>
-    </section>
-  );
-}
-
-const breakdown = [
-  { k: "Market", v: "Illustrative example" },
-  { k: "Timeframe", v: "Illustrative 1H" },
-  { k: "Liquidity", v: "A previous high is identified as a relevant liquidity reference.", n: 1 },
-  { k: "Structure", v: "After price moves above the referenced high, an example break in structure is highlighted below the prior swing low.", n: 3 },
-  { k: "Liquidity Block", v: "The zone the move originated from is annotated for further analysis.", n: 4 },
-  { k: "Reaction", v: "Price returns into the zone and the behavior around it is illustrated.", n: 5 },
-  { k: "Invalidation", v: "Acceptance above the top of the liquidity block would mean the interpretation no longer holds.", n: 6 },
-];
-
-function Analysis() {
-  return (
-    <section className="relative overflow-hidden border-t section-y story-section story-section--quiet">
-      <div className="ambient -right-48 top-1/4 h-[26rem] w-[42rem] opacity-60" aria-hidden />
-      <Reveal className={wrap}>
-        <p className="eyebrow">The analysis</p>
-        <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-          See the framework <span className="font-display-italic text-primary">in action.</span>
-        </h2>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
-          <figure className="analysis-frame edge-lit rounded-md border bg-card p-3 sm:p-6 lg:self-start">
-            <MarketChart
-              stage={4}
-              numbered
-              className="w-full"
-              title="Illustrative 1H analysis"
-              desc="1: previous high as liquidity reference. 2: price moves above it. 3: break of structure below swing low. 4: liquidity block. 5: reaction from the block. 6: invalidation above the block."
-            />
-            <figcaption className="mt-3 border-t px-1 pt-3 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-primary">
-              Illustrative analysis — not a real trade result.
-            </figcaption>
-          </figure>
-
-          <dl className="divide-y border-y">
-            {breakdown.map((b) => (
-              <div key={b.k} className="grid grid-cols-[7.5rem_1fr] gap-3 py-3.5 text-[0.93rem]">
-                <dt className="flex items-start gap-2 font-medium">
-                  {b.n && <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-primary font-mono text-[0.65rem] text-primary-foreground">{b.n}</span>}
-                  {b.k}
-                </dt>
-                <dd className="text-muted-foreground">{b.v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-        <Testimonials />
       </Reveal>
     </section>
   );
