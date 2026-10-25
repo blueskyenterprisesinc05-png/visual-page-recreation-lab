@@ -143,7 +143,7 @@ function Hero() {
 
 function Problem() {
   return (
-    <section className="problem-section border-t section-y">
+    <section className="problem-section section-y">
       <Reveal className={`${wrap} max-w-3xl`}>
         <div>
           <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
@@ -169,7 +169,7 @@ function Problem() {
 
 function Community() {
   return (
-    <section className="community-section relative overflow-hidden border-t section-y">
+    <section className="community-section relative overflow-hidden section-y">
       <Reveal className={`${wrap} relative`}>
         <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           Let&apos;s look at the market{" "}
@@ -192,17 +192,17 @@ function Community() {
 function Footer() {
   return (
     <footer
-      className="site-footer border-t py-14"
+      className="site-footer"
       style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}
     >
-      <div className={`${wrap} grid gap-8 grid-cols-1 min-[810px]:grid-cols-[1fr_1.4fr]`}>
-        <div>
+      <div className={`${wrap} footer-inner`}>
+        <div className="footer-identity">
           <p className="font-semibold tracking-tight">
             Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
           </p>
-          <p className="mt-6 text-sm text-plum">© 2026 Wolf Billion</p>
+          <p className="text-sm text-plum">© 2026 Wolf Billion</p>
         </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+        <p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">
           Trading involves substantial risk and potential financial loss. Content is for educational
           purposes only and does not constitute personalized investment advice. Past performance
           does not guarantee future results.
