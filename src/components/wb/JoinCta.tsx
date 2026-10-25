@@ -5,7 +5,7 @@ type Props = { size?: "sm" | "lg"; className?: string };
 
 const base =
   "cinematic-cta inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors";
-const sizes = { sm: "p-3 text-[12px] font-medium", lg: "px-7 py-4 text-sm" };
+const sizes = { sm: "p-3 text-[14px] font-semibold", lg: "px-7 py-4 text-[14px] font-semibold" };
 
 export function JoinCta({ size = "lg", className }: Props) {
   if (!TELEGRAM_URL) {
@@ -34,12 +34,7 @@ export function JoinCta({ size = "lg", className }: Props) {
       href={TELEGRAM_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(
-        base,
-        sizes[size],
-        "group bg-primary text-primary-foreground hover:bg-primary/90",
-        className,
-      )}
+      className={cn(base, sizes[size], "group", className)}
     >
       Join the Community
       <span className="sr-only">(opens Telegram in a new tab)</span>

@@ -24,10 +24,10 @@
   --foreground: #f0eaf3;
   --card: #17161b;
   --card-foreground: #f0eaf3;
-  --primary: #b29ad7;
+  --primary: #d7c3fa;
   --primary-foreground: #12021a;
   --muted-foreground: #b9b0c2;
-  --plum: #6d6774;
+  --plum: #b9b0c2;
   --border: rgba(178, 154, 215, 0.3);
 }
 
@@ -121,6 +121,10 @@
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.8px;
+  color: #f0eaf3;
+}
+.brand-mark .font-display-italic {
+  color: #b29ad7;
 }
 .site-header .container-page {
   padding: 24px 16px;
@@ -129,17 +133,14 @@
   border: 1px solid rgba(178, 154, 215, 0.3);
   background: transparent;
   color: #f0eaf3;
+  font-size: 12px;
+  font-weight: 500;
 }
 .site-header .cinematic-cta:hover {
   background: #38213f;
 }
 .site-header .cinematic-cta:active {
   background: #493052;
-}
-.site-header .cinematic-cta {
-  border: 1px solid rgba(178, 154, 215, 0.3);
-  background: transparent;
-  color: #f0eaf3;
 }
 .site-header .cinematic-cta:hover {
   background: #38213f;
@@ -161,6 +162,7 @@
 .hero-headline {
   max-width: none;
   margin-inline: auto;
+  color: #f0eaf3;
   font-family: var(--font-sans);
   font-size: 42px;
   font-weight: 400;
@@ -168,10 +170,22 @@
   letter-spacing: -1.3px;
 }
 .hero-headline-italic {
+  color: #b29ad7;
   font-family: var(--font-serif);
+  font-size: inherit;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -1.3px;
+  letter-spacing: inherit;
+}
+.problem-heading,
+.community-heading {
+  color: #f0eaf3;
+  font-weight: 400;
+}
+.problem-heading .font-display-italic,
+.community-heading .font-display-italic {
+  color: #b29ad7;
+  font-weight: 400;
 }
 .hero-copy > p,
 .hero-copy > div {
@@ -180,6 +194,29 @@
 }
 .hero-copy > p {
   margin-top: 28px;
+  color: #b9b0c2;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.problem-section p,
+.community-section p {
+  color: #b9b0c2;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.hero-next p {
+  color: #b9b0c2;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  opacity: 1;
+  text-align: center;
 }
 .hero-next {
   gap: 16px;
@@ -198,11 +235,19 @@
 .site-footer {
   background: #17161b;
 }
+.problem-section .container-page,
+.community-section .container-page {
+  padding-inline: 24px;
+}
 .problem-section .container-page {
   max-width: 984px;
 }
 .problem-section .container-page > div {
   max-width: 800px;
+}
+.problem-section h2,
+.community-section h2 {
+  font-weight: 400;
 }
 .problem-section h2 {
   max-width: 800px;
@@ -247,21 +292,42 @@
 }
 .footer-disclosure {
   max-width: none;
+  color: #b9b0c2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.footer-identity .text-plum {
+  color: #b9b0c2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 .cinematic-cta {
   border: 0;
   border-radius: 6px;
   box-shadow: none;
+  background: #d7c3fa;
+  color: #12021a;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
 }
 .cinematic-cta:hover {
   transform: none;
   box-shadow: none;
+  background: #b29ad7;
+  color: #12021a;
 }
 .cinematic-cta:active {
   background: #a48bcb;
+  color: #12021a;
 }
 .reveal {
-  opacity: 0.85;
+  opacity: 1;
   transform: translateY(5px);
   transition:
     opacity 450ms cubic-bezier(0.2, 0.65, 0.3, 1),
@@ -310,6 +376,9 @@
     line-height: 1.08;
     letter-spacing: -2px;
   }
+  .hero-next p {
+    font-size: 12px;
+  }
   .problem-section .container-page {
     padding-block: 64px 56px;
   }
@@ -337,6 +406,9 @@
     align-items: center;
     justify-content: space-between;
   }
+  .footer-identity .text-plum {
+    text-align: right;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -344,7 +416,7 @@
     padding-inline: 64px;
   }
   .site-header .container-page {
-    padding-block: 32px;
+    padding: 32px 64px;
   }
   .hero .container-page {
     padding-block: 96px 80px;
@@ -355,8 +427,21 @@
     line-height: 1.08;
     letter-spacing: -3px;
   }
+  .site-header .cinematic-cta {
+    font-size: 13px;
+  }
+  .hero-next p {
+    font-size: 12px;
+  }
   .hero-copy > p {
     font-size: 18px;
+  }
+  .problem-section p,
+  .community-section p {
+    font-size: 18px;
+  }
+  .footer-disclosure {
+    font-size: 12px;
   }
   .problem-section .container-page {
     padding-block: 64px 64px;

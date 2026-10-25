@@ -5,26 +5,27 @@ import { JoinCta } from "@/components/wb/JoinCta";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wolf Billion" },
+      { title: "Wolf Billion | Free Trading Education" },
       {
         name: "description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
-      { property: "og:title", content: "Wolf Billion | Understand the Market Beyond Setups" },
+      { property: "og:title", content: "Wolf Billion | Free Trading Education" },
       {
         property: "og:description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wolf Billion" },
+      { property: "og:url", content: "https://wolfbillion.com/" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Wolf Billion | Understand the Market Beyond Setups" },
+      { name: "twitter:title", content: "Wolf Billion | Free Trading Education" },
       {
         name: "twitter:description",
         content:
-          "Study market behavior with more context, look beyond memorized setups, and develop a more thoughtful way to interpret price with Wolf Billion.",
+          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
       },
     ],
     scripts: [
@@ -37,15 +38,15 @@ export const Route = createFileRoute("/")({
               "@type": "Organization",
               name: "Wolf Billion",
               description:
-                "A trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price.",
-              sameAs: ["https://t.me/+K4fPSalRPnsxNTU0"],
+                "Free trading education focused on understanding price movement and market behavior.",
+              url: "https://wolfbillion.com/",
             },
             {
-              "@type": "WebPage",
-              name: "Wolf Billion | Understand the Market Beyond Setups",
+              "@type": "WebSite",
+              name: "Wolf Billion",
               description:
-                "Explore Wolf Billion, a trading education brand focused on liquidity, market structure, and a more disciplined approach to studying price. Join our Telegram community.",
-              isPartOf: { "@type": "WebSite", name: "Wolf Billion" },
+                "Free trading education focused on understanding price movement and market behavior.",
+              url: "https://wolfbillion.com/",
             },
           ],
         }),
@@ -107,12 +108,10 @@ function Nav() {
     >
       <div className={`${wrap} flex items-center justify-between gap-3`}>
         <a href="#top" className="brand-mark whitespace-nowrap">
-          <span>Wolf </span><span className="font-display-italic">Billion</span>
+          <span>Wolf </span>
+          <span className="font-display-italic">Billion</span>
         </a>
-        <JoinCta
-          size="sm"
-          className="shrink-0"
-        />
+        <JoinCta size="sm" className="shrink-0" />
       </div>
     </header>
   );
@@ -125,7 +124,9 @@ function Hero() {
         <div className="hero-copy fade-up">
           <h1 className="hero-title hero-focus-title hero-headline">
             <span>What if you’ve been making trading </span>
-            <span className="hero-headline-italic font-display-italic text-primary">harder than it needs to be?</span>
+            <span className="hero-headline-italic font-display-italic text-primary">
+              harder than it needs to be?
+            </span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             You’ve been focusing on learning strategies instead of understanding what’s actually
@@ -146,7 +147,7 @@ function Problem() {
     <section className="problem-section section-y">
       <Reveal className={`${wrap} max-w-3xl`}>
         <div>
-          <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em]">
+          <h2 className="problem-heading text-3xl font-normal leading-[1.1] tracking-[-0.03em]">
             You’ve learned the strategies.{" "}
             <span className="font-display-italic text-primary">
               But&nbsp;do you understand the market?
@@ -171,8 +172,8 @@ function Community() {
   return (
     <section className="community-section relative overflow-hidden section-y">
       <Reveal className={`${wrap} relative`}>
-        <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-          Let&apos;s look at the market{" "}
+        <h2 className="community-heading max-w-2xl text-3xl font-normal leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+          Let’s look at the market{" "}
           <span className="font-display-italic text-primary">from a different angle.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
@@ -182,7 +183,7 @@ function Community() {
 
         <div className="community-next mt-8 flex flex-col items-start gap-3">
           <JoinCta />
-          <p className="text-sm text-plum">Free access · Opens Telegram</p>
+          <p className="text-plum">Free access · Opens Telegram</p>
         </div>
       </Reveal>
     </section>
