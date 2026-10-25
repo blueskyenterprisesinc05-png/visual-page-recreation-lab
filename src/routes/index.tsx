@@ -261,11 +261,10 @@ function Footer() {
           <p className="font-semibold tracking-tight">
             Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">Clarity over noise. Process over predictions.</p>
-          <p className="mt-6 text-xs text-plum">© {new Date().getFullYear()} Wolf Billion</p>
+          <p className="mt-6 text-sm text-plum">© {new Date().getFullYear()} Wolf Billion</p>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Trading involves substantial risk and potential financial loss. Content is educational and does not constitute personalized investment advice. Past performance does not guarantee future results.
+          Trading involves substantial risk and potential financial loss. Content is for educational purposes only and does not constitute personalized investment advice. Past performance does not guarantee future results.
         </p>
       </div>
     </footer>
