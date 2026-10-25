@@ -176,15 +176,15 @@ function Problem() {
 const stages = [
   {
     n: "01", t: "Liquidity", stage: 1 as const,
-    d: "Study previous highs and lows as possible liquidity reference areas — the levels the framework examines before anything else.",
+    d: "Study previous highs and lows as possible liquidity reference areas, including where highs respect previous highs and lows respect previous lows.",
   },
   {
     n: "02", t: "Structure", stage: 2 as const,
-    d: "Examine breaks of previous highs and lows through our Break of Structure framework, including how such movements may induce market participation.",
+    d: "Examine breaks of previous highs and lows through our Break of Structure framework, including how those movements may induce market participation.",
   },
   {
     n: "03", t: "Liquidity Blocks & Reaction", stage: 3 as const,
-    d: "Study relevant liquidity blocks, price reactions, and the areas used to reason about invalidation and risk.",
+    d: "Study relevant liquidity blocks, price reactions, and how these areas are considered when reasoning about invalidation and risk.",
   },
 ];
 
@@ -193,15 +193,12 @@ function Framework() {
     <section className="relative overflow-hidden border-t bg-card section-y story-section">
       <div className="ambient -left-48 top-10 h-[24rem] w-[38rem] opacity-60" aria-hidden />
       <Reveal className={wrap}>
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
-          <div>
-            <p className="eyebrow">The framework</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
-              A clearer way to <span className="font-display-italic text-primary">interpret price.</span>
-            </h2>
-          </div>
-          <p className="max-w-md leading-relaxed text-muted-foreground lg:justify-self-end">
-            Our approach connects <span className="text-spotlight-soft">liquidity</span>, market structure, and price reaction into a framework for studying market behavior.
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+            Start with understanding <span className="font-display-italic text-primary">how price behaves.</span>
+          </h2>
+          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+            We study price through three connected ideas: liquidity, market structure, and reaction.
           </p>
         </div>
 
@@ -223,10 +220,7 @@ function Framework() {
             ))}
           </ol>
         </div>
-        <p className="mt-10 max-w-2xl border-l-2 border-primary pl-4 font-display-italic text-xl leading-snug sm:text-2xl">
-          We don&apos;t start with predictions. We start by examining where <span className="text-spotlight-soft">liquidity</span> may be, how structure changes, and what price does next.
-        </p>
-        <p className="mt-6 text-sm text-plum">This is an abstract learning sequence, not a prediction or a fixed rule for every market movement.</p>
+        <p className="mt-10 text-sm leading-relaxed text-plum">This is a conceptual overview of our approach, not a fixed rule for every market movement.</p>
       </Reveal>
     </section>
   );
