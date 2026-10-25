@@ -189,9 +189,9 @@ function Behind() {
 }
 
 const community = [
-  { n: "01", t: "Read the chart", d: "Explore what may be happening on a chart instead of relying only on a memorized setup." },
-  { n: "02", t: "Compare interpretations", d: "Discuss chart readings and the context behind different ways of looking at price." },
-  { n: "03", t: "Study with more context", d: "Develop a more thoughtful way to interpret market behavior, including liquidity and structure." },
+  { n: "01", t: "Look beyond the setup", d: "Explore what price is doing, not just whether it matches a strategy." },
+  { n: "02", t: "See different perspectives", d: "Discuss chart interpretations and the reasoning behind them." },
+  { n: "03", t: "Understand the bigger picture", d: "Explore how liquidity and market structure can help put price movements into context." },
 ];
 
 function Community() {
@@ -209,16 +209,14 @@ function Community() {
       </svg>
 
       <Reveal className={`${wrap} relative`}>
-        <p className="eyebrow">Beyond the chart</p>
-        <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+        <h2 className="max-w-2xl text-3xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
           The chart is just the beginning. <span className="font-display-italic text-primary">The conversation continues.</span>
         </h2>
         <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-          Join our Telegram community to explore how price behaves, discuss chart interpretations, and develop a deeper understanding of market behavior.
+          Join us on Telegram to look beyond trading setups, share perspectives, and explore what&apos;s really happening on the chart.
         </p>
 
-        <p className="mt-12 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-plum">Why join the conversation</p>
-        <ul className="community-flow mt-4 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
+        <ul className="community-flow mt-12 grid gap-px overflow-hidden rounded-md border bg-border md:grid-cols-3">
           {community.map((c) => (
             <li key={c.n} className="community-card bg-background card-pad transition-colors hover:bg-elevated">
               <span className="font-mono text-xs text-primary">{c.n}</span>
