@@ -184,17 +184,6 @@
 .hero-copy > h1 { animation: titleIn 800ms cubic-bezier(.2,.7,.2,1) both; }
 .hero-copy > p { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .12s both; }
 .hero-copy > div { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) .2s both; }
-.hero-next { position: relative; }
-.hero-next::before {
-  content: "↓";
-  position: absolute;
-  left: -1.35rem;
-  top: 0.7rem;
-  color: var(--color-primary);
-  font: 0.8rem var(--font-mono);
-  opacity: 0;
-  animation: accentIn 500ms ease 1s forwards;
-}
 .problem-next { position: relative; }
 .problem-next::after {
   content: "next: sequence";
@@ -245,7 +234,6 @@
   .ambient { filter: blur(22px); opacity: .45; }
   .edge-lit { box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-primary) 12%, transparent), 0 14px 40px -34px var(--color-primary); }
   .cinematic-cta:hover { transform: none; }
-  .hero-next::before, .community-next::before { left: -.95rem; }
   .community-flow li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -.7rem; transform: translateX(-50%); }
   .framework-rail { left: 1.75rem; }
 }
