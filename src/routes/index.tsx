@@ -118,7 +118,7 @@ function Hero() {
             </span>
           </h1>
           <p className="hero-focus-rest mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Most traders are looking for the next move. We&apos;re more interested in understanding what&apos;s happening on the chart.
+            You&apos;ve been focusing on learning strategies instead of understanding what&apos;s actually happening on the chart.
           </p>
           <div className="hero-focus-rest hero-next mt-7 flex flex-col items-start gap-3">
             <JoinCta />
