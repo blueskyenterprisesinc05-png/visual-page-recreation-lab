@@ -9,13 +9,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
+          "Learn to understand price movement and market behavior with Wolf Billion. Explore free trading education video lessons and join our Telegram community.",
       },
       { property: "og:title", content: "Wolf Billion | Free Trading Education" },
       {
         property: "og:description",
         content:
-          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
+          "Learn to understand price movement and market behavior with Wolf Billion. Explore free trading education video lessons and join our Telegram community.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wolf Billion" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Explore free trading education video lessons focused on understanding price movement, market behavior, and what's happening on the chart. Join Wolf Billion on Telegram.",
+          "Learn to understand price movement and market behavior with Wolf Billion. Explore free trading education video lessons and join our Telegram community.",
       },
     ],
     scripts: [
