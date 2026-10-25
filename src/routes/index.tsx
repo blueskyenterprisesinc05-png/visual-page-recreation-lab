@@ -111,7 +111,7 @@ function Nav() {
         </a>
         <JoinCta
           size="sm"
-          className="shrink-0 max-[360px]:h-9 max-[360px]:px-3 max-[360px]:text-[0.8rem]"
+          className="shrink-0"
         />
       </div>
     </header>
