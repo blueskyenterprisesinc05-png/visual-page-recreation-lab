@@ -292,12 +292,22 @@
   font-weight: 400;
   line-height: 1.7;
 }
-.footer-identity .text-plum {
-  color: #b9b0c2;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-}
+  .footer-identity .text-plum {
+    color: #b9b0c2;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .footer-social-link {
+    color: #b9b0c2;
+    text-decoration: none;
+  }
+  .footer-social-link:hover,
+  .footer-social-link:focus-visible {
+    color: #f0eaf3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 .cinematic-cta {
   border: 0;
   border-radius: 6px;
