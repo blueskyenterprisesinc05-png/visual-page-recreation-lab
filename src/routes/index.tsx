@@ -209,7 +209,7 @@ function Footer() {
             rel="noreferrer"
             aria-label="Wolf Billion on TikTok"
           >
-            TikTok · @wolfbillion_fx
+            TikTok
           </a>
         </div>
         <p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">
