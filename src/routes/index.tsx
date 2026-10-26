@@ -107,9 +107,8 @@ function Nav() {
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <div className={`${wrap} flex items-center justify-between gap-3`}>
-        <a href="#top" className="brand-mark whitespace-nowrap">
-          <span>Wolf </span>
-          <span className="font-display-italic">Billion</span>
+        <a href="#top" className="brand-mark logo-brand" aria-label="Wolf Billion home">
+          <img src="/wolf-billion-logo.png" alt="Wolf Billion" />
         </a>
         <JoinCta size="sm" className="shrink-0" />
       </div>
