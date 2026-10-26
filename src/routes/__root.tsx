@@ -82,7 +82,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Wolf Billion | Free Trading Education" },
       { name: "robots", content: "index, follow" },
       { name: "googlebot", content: "index, follow" },
-      { rel: "canonical", href: "https://wolfbillion.com/" },
       {
         name: "description",
         content:
@@ -95,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: "https://wolfbillion.com/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
