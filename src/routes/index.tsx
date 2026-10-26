@@ -201,7 +201,7 @@ function Footer() {
           <p className="font-semibold tracking-tight">
             Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
           </p>
-          <p className="text-sm text-plum">�� 2026 Wolf Billion</p>
+          <p className="text-sm text-plum">© 2026 Wolf Billion</p>
           <a
             className="footer-social-link text-sm text-plum"
             href="https://www.tiktok.com/@wolfbillion_fx"
@@ -209,7 +209,7 @@ function Footer() {
             rel="noreferrer"
             aria-label="Wolf Billion on TikTok"
           >
-            TikTok
+            TikTok · @wolfbillion_fx
           </a>
         </div>
         <p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">
