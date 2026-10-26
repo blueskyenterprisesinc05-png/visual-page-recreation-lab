@@ -40,6 +40,7 @@ export const Route = createFileRoute("/")({
               description:
                 "Free trading education focused on understanding price movement and market behavior.",
               url: "https://wolfbillion.com/",
+              sameAs: ["https://www.tiktok.com/@wolfbillion_fx"],
             },
             {
               "@type": "WebSite",
@@ -200,7 +201,16 @@ function Footer() {
           <p className="font-semibold tracking-tight">
             Wolf <span className="font-display-italic text-lg text-primary">Billion</span>
           </p>
-          <p className="text-sm text-plum">�� 2026 Wolf Billion</p>
+          <p className="text-sm text-plum">© 2026 Wolf Billion</p>
+          <a
+            className="footer-social-link text-sm text-plum"
+            href="https://www.tiktok.com/@wolfbillion_fx"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Wolf Billion on TikTok"
+          >
+            TikTok
+          </a>
         </div>
         <p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">
           Trading involves substantial risk and potential financial loss. Content is for educational
