@@ -106,7 +106,7 @@ function Hero() {
         <div className="hero-copy fade-up">
           <p className="eyebrow">Trading Education Community</p>
           <h1 className="hero-title hero-focus-title hero-headline">WOLF <span className="hero-headline-italic">BILLION</span></h1>
-          <p className="hero-focus-rest hero-description">Video courses and step-by-step lessons designed to help you understand price movement, market behavior, and the concepts behind trading.</p>
+          <p className="hero-focus-rest hero-description">Learn to understand price movement, market behavior, and risk through clear trading education.</p>
           <div className="hero-next hero-focus-rest">
             <JoinCta />
             <p className="text-sm text-plum">Free Access</p>
@@ -126,9 +126,8 @@ function About() {
           <h2 className="problem-heading">You’ve learned the strategies. <span className="font-display-italic">But do you understand the market?</span></h2>
         </div>
         <div className="about-copy">
-          <p>Wolf Billion is an online trading education community focused on helping traders develop a deeper understanding of price movement and market behavior.</p>
-          <p>Members gain access to video courses, step-by-step lessons, market analysis, and educational guidance designed to help them understand what happens on the charts.</p>
-          <p>Learn alongside like-minded traders, ask questions, exchange ideas, and develop your trading knowledge in a community built around learning and continuous improvement.</p>
+          <p>Wolf Billion is a trading education community built to help you understand price movement and market behavior.</p>
+          <p>Learn through step-by-step video courses, market analysis, and discussions with like-minded traders.</p>
           <JoinCta />
         </div>
       </Reveal>
@@ -137,9 +136,9 @@ function About() {
 }
 
 const pathItems = [
-  ["01", "Structured Learning", "Access video courses and step-by-step lessons covering trading fundamentals, price movement, and market behavior."],
-  ["02", "Educational Guidance", "Learn from experienced traders, explore market analysis, and get help understanding trading concepts."],
-  ["03", "A Community of Like-Minded Traders", "Connect with other traders, share ideas, ask questions, and learn alongside people working to improve their understanding of the market."],
+  ["01", "Structured Learning", "Move through a clear sequence from trading fundamentals to price movement and market behavior."],
+  ["02", "Educational Guidance", "Use market analysis and practical explanations to build a clearer understanding of trading concepts."],
+  ["03", "Community", "Discuss charts, ask questions, and exchange ideas with like-minded traders learning about the market."],
 ];
 
 function Path() {
@@ -161,14 +160,14 @@ const courseItems = [
   ["Understanding Price Movement", "Learn how price moves and why certain areas of the chart matter."],
   ["Reading Market Behavior", "Understand what happens when price reaches or breaks previous highs and lows."],
   ["Understanding Trading Decisions", "Explore how traders react to price movements and what those reactions can tell us about the market."],
-  ["Managing Risk", "Learn how to identify important price levels, understand uncertainty, and approach risk more carefully."],
+  ["Managing Risk", "Explore uncertainty, position risk, and the decisions that shape a more measured trading approach."],
 ];
 
 function Courses() {
   return (
     <section id="courses" className="courses-section section-y">
       <Reveal className={`${wrap} courses-content`}>
-        <div className="courses-intro"><p className="eyebrow">Our Trading Courses</p><h2>Learn to Understand <span className="font-display-italic">How Price Moves</span></h2><p>Explore video courses and step-by-step lessons designed to help you understand what happens on the charts and why.</p></div>
+        <div className="courses-intro"><p className="eyebrow">What You’ll Learn</p><h2>Learn to Understand <span className="font-display-italic">How Price Moves</span></h2><p>Explore video courses and step-by-step lessons designed to help you understand what happens on the charts and why.</p></div>
         <div className="course-grid">{courseItems.map(([title, body]) => <article className="course-item" key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
         <JoinCta />
       </Reveal>
@@ -177,5 +176,5 @@ function Courses() {
 }
 
 function Footer() {
-  return <footer className="site-footer" style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}><div className={`${wrap} footer-inner`}><div className="footer-identity"><p className="font-semibold tracking-tight">Wolf <span className="font-display-italic text-lg text-primary">Billion</span></p><p className="text-sm text-plum">© 2026 Wolf Billion</p><a className="footer-social-link text-sm text-plum" href="https://www.tiktok.com/@wolfbillion_fx" target="_blank" rel="noreferrer" aria-label="Wolf Billion on TikTok">TikTok</a></div><p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">Trading involves substantial risk and potential financial loss. Content is for educational purposes only and does not constitute personalized investment advice. Past performance does not guarantee future results.</p></div></footer>;
+  return <footer className="site-footer" style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}><div className={`${wrap} footer-inner`}><div className="footer-identity"><p className="font-semibold tracking-tight">Wolf <span className="font-display-italic text-lg text-primary">Billion</span></p><p className="text-sm text-plum">© 2026 Wolf Billion</p><a className="footer-social-link text-sm text-plum" href="https://www.tiktok.com/@wolfbillion_fx" target="_blank" rel="noreferrer" aria-label="Follow Wolf Billion on TikTok">Follow Wolf Billion on TikTok</a></div><p className="footer-disclosure text-sm leading-relaxed text-muted-foreground">Trading involves substantial risk and potential financial loss. Content is for educational purposes only and does not constitute personalized investment advice. Past performance does not guarantee future results.</p></div></footer>;
 }
