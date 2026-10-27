@@ -73,9 +73,11 @@ function Nav() {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
-  const close = () => {
+  const close = (restoreFocus = true) => {
     setOpen(false);
-    requestAnimationFrame(() => triggerRef.current?.focus());
+    if (restoreFocus) {
+      requestAnimationFrame(() => triggerRef.current?.focus());
+    }
   };
 
   useEffect(() => {
@@ -130,10 +132,12 @@ function Nav() {
           <span aria-hidden="true">{open ? "×" : "Menu"}</span>
         </button>
         <nav ref={navRef} id="primary-navigation" className={`site-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation" aria-hidden={open ? undefined : true}>
-          <a href="#top" onClick={close}>Home</a>
-          <a href="#about" onClick={close}>About</a>
-          <a href="#courses" onClick={close}>Courses</a>
-          <JoinCta size="sm" />
+          <a href="#top" onClick={() => close(false)}>Home</a>
+          <a href="#about" onClick={() => close(false)}>About</a>
+          <a href="#courses" onClick={() => close(false)}>Courses</a>
+          <span onClick={() => close(false)}>
+            <JoinCta size="sm" />
+          </span>
         </nav>
       </div>
     </header>
