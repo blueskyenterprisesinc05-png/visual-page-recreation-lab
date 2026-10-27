@@ -163,8 +163,7 @@ function About() {
     <section id="about" className="problem-section section-y">
       <Reveal className={`${wrap} about-layout`}>
         <div>
-          <p className="eyebrow">What Is Wolf Billion?</p>
-          <h2 className="problem-heading">You can learn a trading strategy. <span className="font-display-italic">But do you understand why price moves?</span></h2>
+                  <h2 className="problem-heading">You can learn a trading strategy. <span className="font-display-italic">But do you understand why price moves?</span></h2>
         </div>
         <div className="about-copy">
           <p>Wolf Billion is a trading education community built to help you understand price movement and market behavior.</p>
@@ -186,8 +185,7 @@ function Path() {
   return (
     <section className="community-section section-y">
       <Reveal className={`${wrap} path-content`}>
-        <p className="eyebrow">A Step-by-Step Path</p>
-        <h2 className="community-heading">Tools to Develop <span className="font-display-italic">Your Trading Knowledge</span></h2>
+              <h2 className="community-heading">Tools to Develop <span className="font-display-italic">Your Trading Knowledge</span></h2>
         <div className="path-grid">
           {pathItems.map(([number, title, body]) => <article className="path-item" key={title}><span className="path-number">{number}</span><h3>{title}</h3><p>{body}</p></article>)}
         </div>
@@ -208,7 +206,7 @@ function Courses() {
   return (
     <section id="courses" className="courses-section section-y">
       <Reveal className={`${wrap} courses-content`}>
-        <div className="courses-intro"><p className="eyebrow">What You'll Learn</p><h2>Learn to Understand <span className="font-display-italic">How Price Moves</span></h2><p>Explore video courses and step-by-step lessons designed to help you understand what happens on the charts and why.</p></div>
+        <div className="courses-intro"><h2>Learn to Understand <span className="font-display-italic">How Price Moves</span></h2><p>Explore video courses and step-by-step lessons designed to help you understand what happens on the charts and why.</p></div>
         <div className="course-grid">{courseItems.map(([title, body]) => <article className="course-item" key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
         <JoinCta />
       </Reveal>
