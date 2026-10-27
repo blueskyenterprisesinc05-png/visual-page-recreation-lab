@@ -1,4 +1,4 @@
-import { TELEGRAM_URL } from "@/lib/config";
+import { DISCORD_URL } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 type Props = { size?: "sm" | "lg"; className?: string };
@@ -8,7 +8,7 @@ const base =
 const sizes = { sm: "p-3 text-[14px] font-semibold", lg: "px-7 py-4 text-[14px] font-semibold" };
 
 export function JoinCta({ size = "lg", className }: Props) {
-  if (!TELEGRAM_URL) {
+  if (!DISCORD_URL) {
     return (
       <span className={cn("inline-flex flex-col items-start gap-1.5", className)}>
         <span
@@ -19,11 +19,11 @@ export function JoinCta({ size = "lg", className }: Props) {
             "cursor-not-allowed border border-plum text-muted-foreground",
           )}
         >
-          Join the Community
+          Join Wolf Billion
         </span>
         {size === "lg" && (
           <span role="status" className="text-xs text-muted-foreground">
-            Telegram community link coming soon.
+            Discord invitation link coming soon.
           </span>
         )}
       </span>
@@ -31,13 +31,13 @@ export function JoinCta({ size = "lg", className }: Props) {
   }
   return (
     <a
-      href={TELEGRAM_URL}
+      href={DISCORD_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(base, sizes[size], "group", className)}
     >
-      Join the Community
-      <span className="sr-only">(opens Telegram in a new tab)</span>
+      Join Wolf Billion
+      <span className="sr-only">(opens Discord in a new tab)</span>
     </a>
   );
 }
