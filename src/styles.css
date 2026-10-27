@@ -138,12 +138,10 @@
 .about-copy p { margin: 0; }
 .about-copy p + p { color: #c8bfd0; }
 .about-copy .cinematic-cta { margin-top: 4px; }
-.path-content, .courses-content { max-width: 1080px; }
+.path-content, .courses-content, .about-layout, .site-footer .container-page { max-width: 1080px; }
 .path-content > .eyebrow, .courses-intro > .eyebrow { margin-bottom: 16px; }
 .path-grid, .course-grid { display: grid; gap: 24px; margin-block: 40px; }
-.path-item, .course-item { border-top: 1px solid rgba(178,154,215,.3); padding-top: 20px; }
-.path-item { padding-bottom: 8px; }
-.path-item:nth-child(2) { padding-inline: 16px; border-inline: 1px solid rgba(178,154,215,.18); }
+.path-item { padding: 24px; border: 1px solid rgba(178,154,215,.25); background: rgba(56, 33, 63, .16); border-radius: 4px; }
 .course-item { padding: 24px; border: 1px solid rgba(178,154,215,.25); border-top: 2px solid #b29ad7; background: rgba(56, 33, 63, .16); border-radius: 4px; }
 .path-number { color: #b29ad7; font-size: 12px; letter-spacing: .12em; }
 .path-item h3, .course-item h3 { margin-top: 16px; color: #f0eaf3; font-size: 20px; font-weight: 400; letter-spacing: -.03em; }
@@ -278,9 +276,6 @@
 .community-section .container-page {
   padding-inline: 24px;
 }
-.problem-section .container-page {
-  max-width: 984px;
-}
 .problem-section .container-page > div {
   max-width: 800px;
 }
@@ -298,7 +293,6 @@
   max-width: 680px;
 }
 .community-section .container-page {
-  max-width: 800px;
   text-align: center;
 }
 .community-section h2 {
@@ -409,7 +403,6 @@
   .community-section h2 { font-size: clamp(34px, 10vw, 46px); }
   .problem-section p, .community-section p { font-size: 17px; line-height: 1.65; }
   .path-grid, .course-grid { margin-block: 32px; }
-  .path-item:nth-child(2) { padding-inline: 0; border-inline: 0; }
   .course-item { padding: 20px; }
   .site-footer .container-page { padding-inline: 20px; }
   .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; border: 0; background: transparent; color: #f0eaf3; font: inherit; font-size: 13px; }
@@ -441,7 +434,7 @@
   }
   .hero .container-page {
     max-width: 1080px;
-    padding-block: 80px 72px;
+    padding-block: 48px 64px;
   }
   .hero-title,
   .hero-headline {

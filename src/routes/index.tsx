@@ -146,7 +146,7 @@ function Path() {
     <section className="community-section section-y">
       <Reveal className={`${wrap} path-content`}>
         <p className="eyebrow">A Step-by-Step Path</p>
-        <h2 className="community-heading">Tools to Develop <span className="font-display-italic">Your Trading Knowledge</span></h2>
+        <h2 className="community-heading">A Clearer Path to <span className="font-display-italic">Understanding Markets</span></h2>
         <div className="path-grid">
           {pathItems.map(([number, title, body]) => <article className="path-item" key={title}><span className="path-number">{number}</span><h3>{title}</h3><p>{body}</p></article>)}
         </div>
