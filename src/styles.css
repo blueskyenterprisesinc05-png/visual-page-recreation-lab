@@ -106,6 +106,8 @@
   z-index: 1;
 }
 .site-header {
+  position: relative;
+  z-index: 100;
   background: transparent;
 }
 .nav-inner {
@@ -407,10 +409,32 @@
   .site-footer .container-page { padding-inline: 20px; }
   .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; border: 0; background: transparent; color: #f0eaf3; font: inherit; font-size: 13px; }
 
-  .site-nav { display: none; position: absolute; inset: 100% 16px auto; flex-direction: column; align-items: stretch; gap: 0; padding: 12px; background: #241b29; border: 1px solid rgba(178,154,215,.3); border-radius: 6px; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    inset: 100% 16px auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    background: #241b29;
+    border: 1px solid rgba(178,154,215,.3);
+    border-radius: 6px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .32);
+  }
   .site-nav.is-open { display: flex; }
-  .site-nav a:not(.cinematic-cta) { padding: 12px 8px; }
-  .site-nav .cinematic-cta { margin-top: 8px; text-align: center; }
+  .site-nav a:not(.cinematic-cta) {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    padding: 12px;
+  }
+  .site-nav .cinematic-cta {
+    min-height: 48px;
+    margin-top: 8px;
+    text-align: center;
+  }
 }
 
 
