@@ -71,24 +71,65 @@ function Index() {
 
 function Nav() {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const close = () => {
+    setOpen(false);
+    requestAnimationFrame(() => triggerRef.current?.focus());
+  };
+
+  useEffect(() => {
+    if (!open) return;
+    const nav = navRef.current;
+    const focusable = () => Array.from(nav?.querySelectorAll<HTMLElement>('a, button, [tabindex]:not([tabindex="-1"])') ?? []);
+    focusable()[0]?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
     <header className="hero-focus-rest site-header relative z-40" style={{ paddingTop: "env(safe-area-inset-top)" }}>
+      {open && <button type="button" className="menu-backdrop" aria-label="Close navigation menu" onClick={close} />}
       <div className={`${wrap} nav-inner`}>
         <a href="#top" className="brand-mark logo-brand" aria-label="Wolf Billion home" onClick={close}>
           <img src="/wolf-billion-logo.png" alt="Wolf Billion" />
         </a>
         <button
+          ref={triggerRef}
           type="button"
           className="menu-toggle"
           aria-expanded={open}
           aria-controls="primary-navigation"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => (open ? close() : setOpen(true))}
         >
           <span className="sr-only">{open ? "Close" : "Open"} navigation menu</span>
           <span aria-hidden="true">{open ? "×" : "Menu"}</span>
         </button>
-        <nav id="primary-navigation" className={`site-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation">
+        <nav ref={navRef} id="primary-navigation" className={`site-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation" aria-hidden={open ? undefined : true}>
           <a href="#top" onClick={close}>Home</a>
           <a href="#about" onClick={close}>About</a>
           <a href="#courses" onClick={close}>Courses</a>

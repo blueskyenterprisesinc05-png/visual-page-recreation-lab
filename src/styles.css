@@ -393,6 +393,7 @@
 
 @media (max-width: 809.98px) {
   .section-y { padding-block: 56px; }
+  .site-header { z-index: 200; }
   .hero .container-page { padding-inline: 20px; }
   .hero-inner { padding: 36px 0 48px; }
   .hero-headline { font-size: clamp(36px, 12vw, 54px); }
@@ -407,23 +408,46 @@
   .path-grid, .course-grid { margin-block: 32px; }
   .course-item { padding: 20px; }
   .site-footer .container-page { padding-inline: 20px; }
-  .menu-toggle { display: inline-flex; min-height: 44px; align-items: center; border: 0; background: transparent; color: #f0eaf3; font: inherit; font-size: 13px; }
+  .menu-toggle { display: inline-flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; border: 0; background: transparent; color: #f0eaf3; font: inherit; font-size: 13px; position: relative; z-index: 120; }
+
+  .menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgba(18, 2, 26, .68);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    cursor: default;
+  }
 
   .site-nav {
     display: none;
     position: absolute;
-    z-index: 50;
+    z-index: 110;
     inset: 100% 16px auto;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
     padding: 12px;
-    background: #241b29;
+    background: #241b29 !important;
+    isolation: isolate;
     border: 1px solid rgba(178,154,215,.3);
     border-radius: 6px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, .32);
   }
-  .site-nav.is-open { display: flex; }
+  .site-nav.is-open {
+    display: flex;
+    animation: menu-enter 220ms ease-out both;
+  }
+  .site-nav[aria-hidden="true"] { visibility: hidden; }
+
+  @keyframes menu-enter {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
   .site-nav a:not(.cinematic-cta) {
     display: flex;
     min-height: 48px;
