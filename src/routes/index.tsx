@@ -71,7 +71,6 @@ function Index() {
           <Courses />
           <Benefits />
           <Commitment />
-          <JoinSection />
           <Faq />
         </main>
       </div>
@@ -373,57 +372,23 @@ function Commitment() {
   return (
     <section className="commitment-section section-y">
       <Reveal className={`${wrap} statement-content`}>
+        <p className="closing-label">Join Wolf Billion</p>
         <div className="stage-intro">
           <h2>
             The lessons are free. <span className="font-display-italic">The effort is yours.</span>
           </h2>
         </div>
         <div className="statement-copy">
-          <p>Learning to trade takes time, patience, and consistent effort.</p>
           <p>
-            At Wolf Billion, we make trading concepts easier to understand through structured video
-            courses, practical examples, and a community where you can continue learning.
-          </p>
-          <p>
-            But understanding the market doesn’t happen overnight. You need to be willing to study,
-            practice what you learn, ask questions, and keep improving.
+            Learning to trade takes time, patience, and consistent effort. Join Wolf Billion to learn
+            through structured lessons, practical examples, and a community of traders.
           </p>
         </div>
-        <JoinCta />
-      </Reveal>
-    </section>
-  );
-}
-
-const includedItems = [
-  "Video courses and step-by-step lessons",
-  "Market analysis and practical chart examples",
-  "Educational guidance and support",
-  "A community of like-minded traders",
-];
-
-function JoinSection() {
-  return (
-    <section className="join-section section-y">
-      <Reveal className={`${wrap} join-content`}>
-        <div className="stage-intro">
-          <h2>
-            Start Your Trading Education <span className="font-display-italic">Today.</span>
-          </h2>
+        <div className="closing-cta">
+          <JoinCta label="Join Wolf Billion" />
+          <p className="stage-support">Join our Discord community</p>
+          <p className="stage-support">Free access. No membership fee.</p>
         </div>
-        <h3>Join Wolf Billion for Free</h3>
-        <p>
-          Get access to a trading education community designed to help you understand how price
-          moves and develop your trading knowledge.
-        </p>
-        <h4>Your Free Access Includes:</h4>
-        <ul>
-          {includedItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-        <JoinCta />
-        <p className="stage-support">Free Access. No Membership Fee.</p>
       </Reveal>
     </section>
   );
@@ -503,7 +468,7 @@ function Faq() {
   return (
     <section id="faq" className="faq-section section-y">
       <Reveal className={`${wrap} faq-content`}>
-        <h2 className="faq-label">Frequently Asked Questions</h2>
+        <h2 className="faq-heading">Frequently Asked Questions</h2>
         <div className="faq-list">
           {faqItems.map(([question, answer], index) => {
             const open = openItems.has(index);

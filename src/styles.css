@@ -217,6 +217,10 @@
   line-height: 1.1;
   letter-spacing: -1.2px;
 }
+.courses-intro h2 .font-display-italic {
+  color: #b29ad7;
+  font-weight: 400;
+}
 
 .brand-mark.logo-brand {
   display: block;
@@ -792,6 +796,23 @@
   display: grid;
   gap: 28px;
 }
+.closing-label {
+  color: #b9b0c2;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin: 0;
+}
+.closing-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.closing-cta .stage-support {
+  margin: 10px 0 0;
+}
 .statement-copy {
   max-width: 680px;
   display: grid;
@@ -800,53 +821,20 @@
 .statement-copy p {
   margin: 0;
 }
-.join-section {
-  background: #12021a;
-}
-.join-content {
-  max-width: 800px;
-  text-align: center;
-}
-.join-content .stage-intro {
-  margin-inline: auto;
-}
-.join-content > h3 {
-  margin-top: 36px;
-}
-.join-content > p {
-  max-width: 640px;
-  margin: 12px auto 0;
-}
-.join-content > h4 {
-  margin-top: 32px;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-}
-.join-content ul {
-  max-width: 560px;
-  margin: 16px auto 32px;
-  padding-left: 20px;
-  text-align: left;
-  display: grid;
-  gap: 10px;
-}
-.join-content .cinematic-cta {
-  margin-top: 4px;
-}
 .faq-section {
   background: #17161b;
 }
 .faq-content {
   max-width: 880px;
 }
-.faq-label {
-  color: #b9b0c2;
-  font-size: 12px;
+.faq-heading {
+  color: #f0eaf3;
+  font-size: 40px;
   font-weight: 400;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  text-transform: uppercase;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
 }
+.faq-heading::first-letter { color: #f0eaf3; }
 .faq-list {
   margin-top: 32px;
   border-top: 1px solid rgba(178, 154, 215, 0.3);
