@@ -437,7 +437,7 @@ function Faq() {
             const answerId = `faq-answer-${index}`;
             const questionId = `faq-question-${index}`;
             return (
-              <div className="faq-item" key={question}>
+              <div className="faq-item" key={question} data-open={open}>
                 <h3>
                   <button
                     id={questionId}
