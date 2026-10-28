@@ -184,14 +184,9 @@
   background: rgba(56, 33, 63, 0.16);
   border-radius: 4px;
 }
-.path-number {
-  color: #b29ad7;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
 .path-item h3,
 .course-item h3 {
-  margin-top: 16px;
+  margin-top: 0;
   color: #f0eaf3;
   font-size: 20px;
   font-weight: 400;
@@ -208,7 +203,7 @@
   background: #17161b;
 }
 .courses-intro {
-  max-width: 680px;
+  max-width: 780px;
 }
 .courses-intro h2 {
   color: #f0eaf3;
@@ -266,7 +261,7 @@
   text-align: center;
 }
 .hero-inner {
-  padding: 48px 24px 56px;
+  padding: 32px 24px 44px;
 }
 .hero-headline {
   max-width: none;
@@ -368,7 +363,7 @@
   text-align: center;
 }
 .community-section h2 {
-  max-width: 800px;
+  max-width: 960px;
   margin-inline: auto;
   font-size: 40px;
   line-height: 1.12;
@@ -732,9 +727,7 @@
 #faq {
   scroll-margin-top: 24px;
 }
-.stage-content,
 .statement-content,
-.join-content,
 .faq-content {
   max-width: 1080px;
 }
@@ -751,38 +744,6 @@
 .stage-intro .font-display-italic {
   color: #b29ad7;
 }
-.benefits-section {
-  background: #17161b;
-}
-.benefits-grid {
-  display: grid;
-  gap: 16px;
-  margin-block: 40px;
-}
-.benefit-item {
-  padding: 24px 0;
-  border-top: 1px solid rgba(178, 154, 215, 0.3);
-}
-.benefit-item h3,
-.join-content h3,
-.join-content h4 {
-  color: #f0eaf3;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-}
-.benefit-item p,
-.statement-copy p,
-.join-content > p,
-.join-content li,
-.faq-answer p {
-  color: #b9b0c2;
-  font-size: 16px;
-  line-height: 1.6;
-}
-.benefit-item p {
-  margin-top: 12px;
-}
 .stage-support {
   color: #b9b0c2;
   font-size: 13px;
@@ -795,15 +756,6 @@
 .statement-content {
   display: grid;
   gap: 28px;
-}
-.closing-label {
-  color: #b9b0c2;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  margin: 0;
 }
 .closing-cta {
   display: flex;
@@ -834,7 +786,9 @@
   line-height: 1.12;
   letter-spacing: -1.2px;
 }
-.faq-heading::first-letter { color: #f0eaf3; }
+.faq-heading::first-letter {
+  color: #f0eaf3;
+}
 .faq-list {
   margin-top: 32px;
   border-top: 1px solid rgba(178, 154, 215, 0.3);

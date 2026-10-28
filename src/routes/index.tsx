@@ -69,7 +69,6 @@ function Index() {
           <About />
           <Path />
           <Courses />
-          <Benefits />
           <Commitment />
           <Faq />
         </main>
@@ -172,11 +171,11 @@ function Nav() {
           <a href="#about" onClick={() => close(false)}>
             About
           </a>
-          <a href="#courses" onClick={() => close(false)}>
-            Courses
-          </a>
           <a href="#benefits" onClick={() => close(false)}>
             Benefits
+          </a>
+          <a href="#courses" onClick={() => close(false)}>
+            What You’ll Learn
           </a>
           <a href="#faq" onClick={() => close(false)}>
             FAQ
@@ -241,17 +240,14 @@ function About() {
 
 const pathItems = [
   [
-    "01",
     "Structured Learning",
     "Move through a clear sequence from trading fundamentals to price movement and market behavior.",
   ],
   [
-    "02",
     "Educational Guidance",
     "Use market analysis and practical explanations to build a clearer understanding of trading concepts.",
   ],
   [
-    "03",
     "Community",
     "Discuss charts, ask questions, and exchange ideas with like-minded traders learning about the market.",
   ],
@@ -259,15 +255,14 @@ const pathItems = [
 
 function Path() {
   return (
-    <section className="community-section section-y">
+    <section id="benefits" className="community-section section-y">
       <Reveal className={`${wrap} path-content`}>
         <h2 className="community-heading">
           Tools to Develop <span className="font-display-italic">Your Trading Knowledge</span>
         </h2>
         <div className="path-grid">
-          {pathItems.map(([number, title, body]) => (
+          {pathItems.map(([title, body]) => (
             <article className="path-item" key={title}>
-              <span className="path-number">{number}</span>
               <h3>{title}</h3>
               <p>{body}</p>
             </article>
@@ -325,54 +320,10 @@ function Courses() {
   );
 }
 
-const accessItems = [
-  [
-    "Video Courses & Step-by-Step Lessons",
-    "Follow structured lessons that break down trading concepts into simple, easy-to-understand explanations.",
-  ],
-  [
-    "Market Analysis & Practical Examples",
-    "Explore real chart examples to see how price moves and how the concepts you learn apply to the market.",
-  ],
-  [
-    "Guidance & Support",
-    "Ask questions, get help understanding difficult concepts, and continue learning with support from the community.",
-  ],
-  [
-    "A Community of Traders",
-    "Connect with like-minded traders, exchange ideas, share experiences, and learn together.",
-  ],
-];
-
-function Benefits() {
-  return (
-    <section id="benefits" className="benefits-section section-y">
-      <Reveal className={`${wrap} stage-content`}>
-        <div className="stage-intro">
-          <h2>
-            Everything You Need to <span className="font-display-italic">Start Learning</span>
-          </h2>
-        </div>
-        <div className="benefits-grid">
-          {accessItems.map(([title, body]) => (
-            <article className="benefit-item" key={title}>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-        <JoinCta />
-        <p className="stage-support">Free Access</p>
-      </Reveal>
-    </section>
-  );
-}
-
 function Commitment() {
   return (
     <section className="commitment-section section-y">
       <Reveal className={`${wrap} statement-content`}>
-        <p className="closing-label">Join Wolf Billion</p>
         <div className="stage-intro">
           <h2>
             The lessons are free. <span className="font-display-italic">The effort is yours.</span>
@@ -380,14 +331,13 @@ function Commitment() {
         </div>
         <div className="statement-copy">
           <p>
-            Learning to trade takes time, patience, and consistent effort. Join Wolf Billion to learn
-            through structured lessons, practical examples, and a community of traders.
+            Learning to trade takes time, patience, and consistent effort. Join Wolf Billion to
+            learn through structured lessons, practical examples, and a community of traders.
           </p>
         </div>
         <div className="closing-cta">
           <JoinCta label="Join Wolf Billion" />
-          <p className="stage-support">Join our Discord community</p>
-          <p className="stage-support">Free access. No membership fee.</p>
+          <p className="stage-support">Free Discord community. No membership fee.</p>
         </div>
       </Reveal>
     </section>
@@ -453,16 +403,28 @@ const faqItems = [
   ],
 ];
 
+const orderedFaqItems = [
+  faqItems[1],
+  faqItems[2],
+  faqItems[3],
+  faqItems[13],
+  faqItems[10],
+  faqItems[0],
+  ...faqItems.slice(4, 10),
+  faqItems[11],
+  faqItems[12],
+];
+
 function Faq() {
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
   const toggle = (index: number) =>
     setOpenItems((current) => {
       const next = new Set(current);
       if (next.has(index)) {
-      next.delete(index);
-    } else {
-      next.add(index);
-    }
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
       return next;
     });
   return (
@@ -470,7 +432,7 @@ function Faq() {
       <Reveal className={`${wrap} faq-content`}>
         <h2 className="faq-heading">Frequently Asked Questions</h2>
         <div className="faq-list">
-          {faqItems.map(([question, answer], index) => {
+          {orderedFaqItems.map(([question, answer], index) => {
             const open = openItems.has(index);
             const answerId = `faq-answer-${index}`;
             const questionId = `faq-question-${index}`;
