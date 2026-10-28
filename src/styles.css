@@ -467,7 +467,7 @@
     padding-inline: 20px;
   }
   .hero-inner {
-    padding: 36px 0 48px;
+    padding: 24px 0 48px;
   }
   .hero-headline {
     font-size: clamp(36px, 12vw, 54px);
@@ -867,6 +867,18 @@
 @media (max-width: 809.98px) {
   .stage-intro h2 {
     font-size: clamp(34px, 10vw, 46px);
+  }
+  .commitment-section .stage-intro h2 {
+    font-size: clamp(31px, 9.2vw, 42px);
+  }
+  .faq-heading {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+  .statement-copy p {
+    color: #b9b0c2;
+  }
+  .commitment-section {
+    padding-bottom: 40px;
   }
   .benefit-item {
     padding-block: 20px;
