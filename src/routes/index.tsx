@@ -39,7 +39,7 @@ function Reveal({ children, className }: { children: ReactNode; className?: stri
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.classList.add("reveal");
+    el.classList.add("reveal-ready");
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -195,14 +195,14 @@ function Hero() {
       <div className={`${wrap} relative hero-inner`}>
         <div className="hero-copy fade-up">
           <p className="eyebrow">Trading Education Community</p>
-          <h1 className="hero-title hero-focus-title hero-headline">
+          <h1 className="hero-title hero-focus-title hero-headline hero-entrance-title">
             WOLF <span className="hero-headline-italic">BILLION</span>
           </h1>
-          <p className="hero-focus-rest hero-description">
+          <p className="hero-focus-rest hero-description hero-entrance-description">
             Learn to understand price movement, market behavior, and risk through clear trading
             education.
           </p>
-          <div className="hero-next hero-focus-rest">
+          <div className="hero-next hero-focus-rest hero-entrance-cta">
             <JoinCta />
             <p className="text-sm text-plum">Free Access</p>
           </div>
@@ -454,10 +454,13 @@ function Faq() {
                   id={answerId}
                   role="region"
                   aria-labelledby={questionId}
-                  hidden={!open}
+                  aria-hidden={!open}
                   className="faq-answer"
+                  data-open={open}
                 >
-                  <p>{answer}</p>
+                  <div className="faq-answer-inner">
+                    <p>{answer}</p>
+                  </div>
                 </div>
               </div>
             );
