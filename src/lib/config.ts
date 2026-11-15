@@ -1,6 +1,6 @@
-/** Single source for the Discord community destination. */
-const raw = (
-  (import.meta.env["VITE_DISCORD_URL"] as string | undefined) || "https://discord.gg/Vwv6QAegrk"
-).trim();
+/** Single source for the Wolf Billion Discord community destination. */
+const DISCORD_URL = "https://discord.gg/Vwv6QAegrk";
 
-export const DISCORD_URL: string | null = /^https:\/\//.test(raw) ? raw : null;
+export const COMMUNITY_URL: string | null = /^https:\/\/discord\.gg\//.test(DISCORD_URL)
+  ? DISCORD_URL
+  : null;

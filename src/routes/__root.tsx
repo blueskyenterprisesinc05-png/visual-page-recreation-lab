@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Wolf Billion is a free online trading education community with video courses, step-by-step lessons, and practical guidance for understanding price movement and market behavior.",
+          "Learn to understand price movement and market behavior with Wolf Billion. Explore free trading education video lessons and join our Discord community.",
       },
       { name: "theme-color", content: "#17161B" },
     ],
